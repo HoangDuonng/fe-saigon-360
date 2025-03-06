@@ -5,7 +5,6 @@ import { useLocale } from "next-intl";
 
 export default function Footer() {
     const locale = useLocale();
-
     return (
         <div>
             <footer className="flex flex-wrap bg-[#F2F2F2] text-center mt-20 md:justify-center md:p-12">
