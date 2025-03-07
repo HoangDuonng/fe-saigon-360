@@ -1,0 +1,242 @@
+<html lang="vi">
+
+<head>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@v4.0.0/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    }
+
+    .content-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    model-viewer {
+      width: 50%;
+      height: 100%;
+      background: #f9fafb;
+    }
+
+    .description {
+      width: 50%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background: #ffffff;
+      overflow-y: auto;
+      border-left: 5px solid #1d4ed8;
+    }
+
+    .description h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #1d4ed8;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .description p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .accordion {
+      margin-bottom: 20px;
+      cursor: pointer;
+      padding: 15px;
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .accordion:hover {
+      background: #e5e7eb;
+    }
+
+    .accordion-content {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border-top: 1px solid #d1d5db;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-content img:hover {
+      transform: scale(1.05);
+    }
+
+    .read-more-btn {
+      align-self: center;
+      padding: 10px 20px;
+      background: #1d4ed8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .read-more-btn:hover {
+      background: #2563eb;
+    }
+
+    .audio-player-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: opacity 0.5s ease;
+    }
+
+    .audio-player-container:hover {
+      opacity: 1;
+    }
+
+    .audio-off-btn {
+      background: #dc2626;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .audio-off-btn:hover {
+      background: #ef4444;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-container {
+        flex-direction: column;
+      }
+
+      model-viewer,
+      .description {
+        width: 100%;
+        height: 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-container">
+    <model-viewer src="./nha-tho-duc-ba.glb" alt="Mô hình 3D Nhà thờ Đức Bà" camera-controls auto-rotate
+      touch-action="pan-y" tone-mapping="aces" shadow-intensity="1">
+    </model-viewer>
+
+    <div class="description">
+      <h3>Nhà thờ Đức Bà Sài Gòn</h3>
+      <p>Nhà thờ Đức Bà là một công trình kiến trúc nổi bật của Sài Gòn, được xây dựng từ năm 1877 và hoàn thành năm
+        1883. Nằm tại trung tâm Quận 1, nhà thờ là biểu tượng văn hóa và lịch sử của thành phố Hồ Chí Minh. Công trình
+        mang phong cách kiến trúc Roman và Gothic, với hai tháp chuông cao 58 mét sừng sững giữa lòng thành phố. Vật
+        liệu xây dựng chính của nhà thờ được nhập khẩu từ Pháp, bao gồm gạch đỏ từ Marseille và kính màu từ Chartres,
+        góp phần tạo nên vẻ đẹp cổ kính và bền vững qua thời gian. Bên trong nhà thờ có sức chứa lên tới 1.200 người, là
+        nơi diễn ra các hoạt động tôn giáo quan trọng của cộng đồng Công giáo. Không chỉ mang ý nghĩa tôn giáo, nhà thờ
+        Đức Bà còn là điểm đến thu hút đông đảo du khách trong và ngoài nước. Với lịch sử lâu đời và kiến trúc độc đáo,
+        nơi đây là biểu tượng gắn liền với quá trình phát triển của thành phố, góp phần lưu giữ những giá trị văn hóa và
+        lịch sử quý báu.</p>
+
+      <div class="accordion" onclick="toggleAccordion(this)">Kiến trúc
+        <div class="accordion-content">
+          <p>Thánh đường có thiết kế gồm một lòng chính, hai lòng phụ và hai dãy nhà nguyện, dài 93 m, rộng 35 m, cao 21 m, sức chứa 1.200 người. Nội thất có hai hàng cột tượng trưng 12 thánh tông đồ, bàn thờ chính bằng đá cẩm thạch với điêu khắc tinh xảo. Nhà thờ có 56 cửa kính màu mô tả Thánh Kinh, nhưng hầu hết đã được thay thế sau Thế chiến II. Trên gác đàn có cây đàn organ ống cổ, nhưng hiện đã hỏng do mối ăn phần gỗ bàn phím.</p>
+        </div>
+      </div>
+
+      <div class="accordion" onclick="toggleAccordion(this)">Ý nghĩa lịch sử
+        <div class="accordion-content">
+          <p>Năm 1958, Linh mục Giuse Phạm Văn Thiên, cai quản Giáo xứ Sài Gòn thời ấy, đã đặt tạc một Tượng Đức Bà Hòa Bình bằng loại đá cẩm thạch trắng Carrara của Ý. Tượng được tạc tại Pietrasanta cách Roma khoảng 500 km. Khi tượng hoàn tất thì được đưa xuống tàu Oyanox vào ngày 8 tháng 1 năm 1959 từ hải cảng Gênes chở tượng qua Việt Nam và tới Sài Gòn ngày 15 tháng 2 năm 1959. Sau đó, công ty Société d'Entreprises đã dựng tượng Đức Mẹ lên bệ đá vốn còn để trống kể từ năm 1945 trước nhà thờ. Tự tay linh mục viết câu kinh cầu nguyện "Xin Đức Mẹ cho Việt Nam được hòa bình" rồi đọc trước đông đảo quan khách có mặt hôm ấy. Ngày hôm sau, Hồng y Krikor Bedros XV Aghagianian từ Roma qua Sài Gòn để chủ tọa lễ bế mạc Đại hội Thánh Mẫu Toàn Quốc, đã làm phép bức tượng này vào buổi chiều ngày 17 tháng 2 năm 1959. Từ sự kiện này mà từ đó nhà thờ có tên gọi là Nhà thờ Chính Tòa Đức Bà Sài Gòn. Ngày 5 tháng 12 năm 1959, Tòa Thánh đã cho phép làm lễ "xức dầu", tôn phong Nhà thờ chính tòa Sài Gòn lên hàng tiểu Vương cung thánh đường (basilique). Từ đó, tên gọi chính thức của thánh đường là Vương cung thánh đường Đức Bà Sài Gòn. Năm 1960, Tòa Thánh thành lập hàng giáo phẩm Việt Nam với ba tòa Tổng Giám mục tại Hà Nội, Huế và Sài Gòn. Nhà thờ trở thành nhà thờ chính tòa của vị tổng giám mục Sài Gòn cho đến ngày nay.</p>
+        </div>
+      </div>
+
+      <div class="accordion" onclick="toggleAccordion(this)">Văn hóa & Du lịch
+        <div class="accordion-content">
+          <p>Nhà thờ Đức Bà Sài Gòn là biểu tượng văn hóa và điểm đến du lịch nổi bật của TP.HCM. Với kiến trúc Roman – Gôtich đặc trưng, nhà thờ thu hút du khách bởi vẻ đẹp cổ kính, không gian trang nghiêm và nghệ thuật kính màu độc đáo. Mỗi ngày, nơi đây đón nhiều khách tham quan và tín hữu đến cầu nguyện. Quảng trường phía trước với tượng Đức Mẹ Hòa Bình là điểm check-in phổ biến. Các sự kiện Công giáo lớn như lễ Giáng Sinh thu hút đông đảo người dân và du khách, tạo nên không khí trang trọng nhưng không kém phần sôi động.</p>
+        </div>
+      </div>
+      <img src="/assets/images/nhathoducba.png" alt="TP. Hồ Chí Minh" />
+      <p>Ảnh nhà thờ Đức Bà</p>
+      <img src="/assets/images/tuong-duc-me.png" alt="TP. Hồ Chí Minh" />
+      <p>Ảnh tượng Đức mẹ</p>
+
+
+      <button class="read-more-btn" onclick="toggleAll()">Xem thêm / Thu gọn</button>
+    </div>
+  </div>
+
+  <div class="audio-player-container">
+    <audio class="audio-player" controls autoplay loop>
+      <source src="audio/intro-nha-tho-duc-ba.mp3" type="audio/mp3">
+      Your browser does not support audio.
+    </audio>
+    <button class="audio-off-btn" onclick="turnOffAudio()">Turn Off Audio</button>
+  </div>
+
+  <script>
+    function toggleAccordion(element) {
+      const content = element.querySelector('.accordion-content');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleAll() {
+      const contents = document.querySelectorAll('.accordion-content');
+      contents.forEach(content => {
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    }
+    function turnOffAudio() {
+      const audio = document.querySelector('.audio-player');
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  </script>
+</body>
+
+</html>
