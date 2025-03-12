@@ -169,7 +169,7 @@
 <body>
   <div class="content-container">
     <model-viewer src="./nha-tho-duc-ba.glb" alt="Mô hình 3D Nhà thờ Đức Bà" camera-controls auto-rotate
-      touch-action="pan-y" tone-mapping="aces" shadow-intensity="1">
+      touch-action="pan-y" tone-mapping="aces" shadow-intensity="1" camera-orbit="90deg 90deg 8m">
     </model-viewer>
 
     <div class="description">
@@ -212,9 +212,9 @@
   </div>
 
   <div class="audio-player-container">
-    <audio class="audio-player" controls autoplay loop>
-      <source src="audio/intro-nha-tho-duc-ba.mp3" type="audio/mp3">
-      Your browser does not support audio.
+    <audio class="audio-player" controls loop>
+      <source src="audio/intro-nha-tho-duc-ba-vi.mp3" type="audio/mp3">
+      Trình duyệt của bạn không hỗ trợ âm thanh.
     </audio>
     <button class="audio-off-btn" onclick="turnOffAudio()">Turn Off Audio</button>
   </div>
@@ -235,6 +235,9 @@
       const audio = document.querySelector('.audio-player');
       audio.pause();
       audio.currentTime = 0;
+    }
+    function closePopup() {
+      turnOffAudio();
     }
   </script>
 </body>

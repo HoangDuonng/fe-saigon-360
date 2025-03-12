@@ -14,7 +14,7 @@ const destinations = [
     nameEn: 'Ho Chi Minh Book Street',
     nameVi: 'Đường sách Hồ Chí Minh',
     image: '/assets/images/duongsach.png',
-    link: '/panoramas/saigon-notre-dame-cathedral',
+    link: '/panoramas/book-street',
     trending: true,
   },
   {

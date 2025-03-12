@@ -41,8 +41,8 @@
 		text_width="300"
 		callout_bg_border="0,0,0,2"
 		text_x="10"
-		css_title="color:#fff;font-size:25px;"
-		css_text="color:#fff;font-size:16px;text-shadow: 3px 3px 8px #000000;"
+		css_title="color:#fff;font-size:17px;"
+		css_text="color:#fff;font-size:14px;text-shadow: 3px 3px 8px #000000;"
 		title_background="0xb50000"
 		text_background=""
 		title_padding="10"
@@ -220,7 +220,7 @@
 
 		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="29.480" atv="22.055" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
 		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-42.300" atv="25.286" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
-		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="-5.279" atv="-16.202" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-vi.html', 'width:100%;height:100%;');" title="Thông tin về Nhà thờ Đức Bà" content="Nhà thờ chính tòa Đức Bà Sài Gòn, thường được gọi tắt là Nhà thờ Đức Bà, là nhà thờ chính tòa của Tổng giáo phận Sài Gòn. Nhà thờ không chỉ là biểu tượng của Công giáo ở Việt Nam, mà còn là một trong những công trình kiến trúc độc đáo của Thành phố Hồ Chí Minh và điểm đến nổi tiếng với du khách." />
+		<hotspot name="callout_nha-tho-duc-ba" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="-5.279" atv="-16.202" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-vi.html', 'width:100%;height:100%;'); " title="Thông tin về Nhà thờ Đức Bà" content="Nhà thờ chính tòa Đức Bà Sài Gòn, thường được gọi tắt là Nhà thờ Đức Bà, là nhà thờ chính tòa của Tổng giáo phận Sài Gòn. Nhà thờ không chỉ là biểu tượng của Công giáo ở Việt Nam, mà còn là một trong những công trình kiến trúc độc đáo của Thành phố Hồ Chí Minh và điểm đến nổi tiếng với du khách." />
 
 	</scene>
 
@@ -232,14 +232,15 @@
 		</image>
 		<!-- Scene Nha Tho Duc Ba -->
 		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle" ath="149.739" atv="1.023" linkedscene="scene_nha-tho-duc-ba" tag="Khám phá ngay" />
-		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="149.739" atv="1.023" linkedscene="scene_nha-sach" title="Nhà thờ Đức Bà" content="Nhà thờ chính tòa Đức Bà Sài Gòn, thường được gọi tắt là Nhà thờ Đức Bà, là nhà thờ chính tòa của Tổng giáo phận Sài Gòn. Nhà thờ không chỉ là biểu tượng của Công giáo ở Việt Nam, mà còn là một trong những công trình kiến trúc độc đáo của Thành phố Hồ Chí Minh và điểm đến nổi tiếng với du khách." />
+		<hotspot name="callout_nha-tho-duc-ba-3d" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="150.372" atv="-9.089" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-vi.html', 'width:100%;height:100%;');" />
+		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="149.372" atv="1.089" title="Thông tin về Nhà thờ Đức Bà" content="Nhà thờ chính tòa Đức Bà Sài Gòn, thường được gọi tắt là Nhà thờ Đức Bà, là nhà thờ chính tòa của Tổng giáo phận Sài Gòn. Nhà thờ không chỉ là biểu tượng của Công giáo ở Việt Nam, mà còn là một trong những công trình kiến trúc độc đáo của Thành phố Hồ Chí Minh và điểm đến nổi tiếng với du khách."/>
 
 		<hotspot name="scene_cong-vien-30-thang-4" style="hs_circle" ath="-18.182" atv="1.303" linkedscene="scene_cong-vien-30-thang-4" tag="Khám phá ngay" />
 		<hotspot name="callout_cong-vien-30-thang-4" style="callout" ath="-18.182" atv="1.303" linkedscene="scene_cong-vien-30-thang-4" title="Công viên 30 tháng 4" content="Một không gian xanh ngay trung tâm Thành phố Hồ Chí Minh, hoàn hảo để thư giãn và ngắm nhìn mọi người." />
 
 		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-19.927" atv="18.993" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
 		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="149.705" atv="21.197" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
-		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="150.372" atv="-9.089" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-vi.html', 'width:100%;height:100%;');" title="Thông tin về Nhà thờ Đức Bà" content="Nhà thờ chính tòa Đức Bà Sài Gòn, thường được gọi tắt là Nhà thờ Đức Bà, là nhà thờ chính tòa của Tổng giáo phận Sài Gòn. Nhà thờ không chỉ là biểu tượng của Công giáo ở Việt Nam, mà còn là một trong những công trình kiến trúc độc đáo của Thành phố Hồ Chí Minh và điểm đến nổi tiếng với du khách." />
+		
 	</scene>
 
 	<scene name="scene_cong-vien-30-thang-4" title="Công viên 30 tháng 4" onstart="" thumburl="panos/cong-vien-30-thang-4.tiles/thumb.jpg" lat="" lng="" heading="">

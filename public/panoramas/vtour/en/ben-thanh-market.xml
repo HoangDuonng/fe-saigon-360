@@ -45,8 +45,8 @@
 		text_width="300"
 		callout_bg_border="0,0,0,2"
 		text_x="10"
-		css_title="color:#fff;font-size:25px;"
-		css_text="color:#fff;font-size:16px;text-shadow: 3px 3px 8px #000000;"
+		css_title="color:#fff;font-size:17px;"
+		css_text="color:#fff;font-size:14px;text-shadow: 3px 3px 8px #000000;"
 		title_background="0xb50000"
 		text_background=""
 		title_padding="10"
@@ -224,7 +224,7 @@
 		<image>
 			<cube url="panos/cho_ben_thanh.tiles/pano_%s.jpg" />
 		</image>
-		<hotspot name="callout_cho-ben-thanh" style="callout" ath="7.437" atv="-7.362" onclick="open-lightboxlayer('%CURRENTXML%/3d-viewer.html', 'width:80%;height:80%;');" title="Ben Thanh Market" content="A bustling symbol of Saigon, Ben Thanh Market is a must-visit for local street food, souvenirs, and cultural experiences." />
+		<hotspot name="callout_cho-ben-thanh" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="7.437" atv="-7.362" onclick="open-lightboxlayer('%CURRENTXML%/3d-viewer.html', 'width:80%;height:80%;');" title="Ben Thanh Market" content="A bustling symbol of Saigon, Ben Thanh Market is a must-visit for local street food, souvenirs, and cultural experiences." />
 	</scene>
 
 
