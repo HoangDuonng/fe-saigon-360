@@ -39,7 +39,7 @@ const destinations: { trending: Destination[]; new: Destination[] } = {
     {
       nameEn: 'Metro Ben Thanh - Suoi Tien',
       nameVi: 'Tàu điện Metro Bến Thành - Suối Tiên',
-      image: '/assets/images/metro.png',
+      image: '/assets/images/metro-ben-thanh-suoi-tien/metro-ben-thanh-suoi-tien1.png',
       link: '/panoramas/metro-ben-thanh-suoi-tien',
       new: true,
     },

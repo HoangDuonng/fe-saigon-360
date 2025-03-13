@@ -2,12 +2,14 @@
 
 import { useEffect } from 'react';
 import Cookies from 'js-cookie';
+import { env } from '@/env.mjs';
+
 const AuthSuccessPage = () => {
     const fetchUserInfo = async () => {
         const sessionId = Cookies.get('sessionId') || 'default-session-id';
         try {
             const response = await fetch(
-                `http://localhost:8386/auth/google?sessionId=${encodeURIComponent(sessionId)}`,
+                `${env.NEXT_PUBLIC_BACKEND_DOMAIN}/auth/google?sessionId=${encodeURIComponent(sessionId)}`,
                 {
                     method: 'GET',
                     credentials: 'include',
