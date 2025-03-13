@@ -12,7 +12,7 @@ export const getUser = async (dispatch: AppDispatch): Promise<void> => {
         const sessionId = Cookies.get('sessionId');
         try {
             const response = await axiosClientFe.get(
-                `/profile/?pid=${sessionId}`
+                `/api/profile/?pid=${sessionId}`
             );
 
             console.log('chekcrersssssss: ', response);

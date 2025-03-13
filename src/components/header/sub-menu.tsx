@@ -21,12 +21,12 @@ export default function SubMenu({ subFunctions, locale }: SubMenuProps) {
       transition={{ duration: 0.3 }}
       className="absolute top-full left-0 w-full bg-[#EBEBEB] shadow-md z-50 border-t border-b-4 border-red"
     >
-      <div className="container mx-auto grid grid-cols-3 gap-6 h-72 p-6 overflow-y-auto">
+      <div className="container mx-auto grid grid-cols-3 gap-6 h-52 p-6 overflow-y-auto">
         {subFunctions.map((sub) => (
           <Link
             key={sub.url}
             href={`/${locale}${sub.url}`}
-            className="block text-yellow font-medium hover:font-bold"
+            className="block text-yellow text-sm font-light hover:font-bold"
           >
             {sub.name}
           </Link>

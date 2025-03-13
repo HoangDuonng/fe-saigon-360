@@ -61,7 +61,7 @@ export default function AdsBanner() {
               />
               <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-                <h1 className="text-5xl font-bold uppercase mb-4 font-[Dancing Script]">
+                <h1 className="text-4xl font-bold uppercase mb-4 font-[Dancing Script]">
                   {locale === "en" ? img.titleEn : img.titleVi}
                 </h1>
                 <p className="text-lg font-medium">

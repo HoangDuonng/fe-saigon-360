@@ -5,13 +5,15 @@ interface InfoSectionProps {
     title: string;
     openTime: string;
     subtitle: string;
-    content: string[];
+    content: string; // Modified: Content is now a single string
     images: string[];
     id: string;
 }
 
 export default function InfoSection({ title, openTime, subtitle, content, images, id }: InfoSectionProps) {
     const locale = useLocale();
+    const paragraphs = content.split("\n"); // Split content into paragraphs
+
     return (
         <div className="py-10 px-4">
             <h2 className="text-xl md:text-2xl font-roboto font-bold text-black border-b pb-2">{title}</h2>
@@ -20,7 +22,7 @@ export default function InfoSection({ title, openTime, subtitle, content, images
 
             {/* Hiển thị nội dung và ảnh xen kẽ */}
             <div className="mt-4 space-y-10">
-                {content.map((paragraph, index) => {
+                {paragraphs.map((paragraph, index) => { // Iterate over paragraphs
                     const hasImage = index < images.length; // Kiểm tra ảnh có tồn tại không
 
                     return (
@@ -36,7 +38,6 @@ export default function InfoSection({ title, openTime, subtitle, content, images
                                         layout="responsive"
                                         className="rounded-lg shadow-lg"
                                     />
-
                                     {/* Đặt caption giữa ảnh và văn bản */}
                                     <p className="italic text-sm font-light mt-2 text-center">
                                         {locale == "en" ? 
