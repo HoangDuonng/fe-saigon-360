@@ -27,10 +27,9 @@ export default function LocalSwitcher() {
   return (
     <div className='relative'>
       <div
-        className='flex items-center space-x-2 cursor-pointer font-bold'
+        className='flex items-center space-x-2 cursor-pointer font-light text-white text-sm'
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span>{locale === 'vi' ? 'Tiếng Việt' : 'English'}</span>
         <Image
           src={locale === 'vi' ? Images.vietnam : Images.england}
           width={20}
@@ -38,20 +37,20 @@ export default function LocalSwitcher() {
           alt='flag'
           className='object-cover'
         />
-        <IoIosArrowDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <span>{locale === 'vi' ? 'Tiếng Việt' : 'English'}</span>
+
+        <IoIosArrowDown className={`w-4 h-4 text-white transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </div>
 
       {isOpen && (
-        <div className='absolute top-full mt-2 w-40 bg-white shadow-md rounded-lg border z-50'>
+        <div className='absolute top-full mt-2 w-40 bg-black bg-opacity-50 backdrop-blur-sm shadow-md rounded-lg border border-gray-700 z-50'>
           {languages.map((lang) => (
             <div
               key={lang.code}
               onClick={() => changeLanguage(lang.code)}
-              className={`flex items-center p-2 hover:bg-blue-100 cursor-pointer space-x-2 ${
-                locale === lang.code ? 'bg-blue-50' : ''
-              }`}
+              className={`flex items-center p-2 text-sm text-white hover:bg-red hover:opacity-90 cursor-pointer space-x-2 ${locale === lang.code ? 'bg-yellow-500 bg-opacity-30' : ''
+                }`}
             >
-              <span>{lang.name}</span>
               <Image
                 src={lang.flag}
                 width={20}
@@ -59,6 +58,7 @@ export default function LocalSwitcher() {
                 alt={lang.name}
                 className='object-cover mr-2'
               />
+              <span>{lang.name}</span>
             </div>
           ))}
         </div>

@@ -1,13 +1,11 @@
 "use client";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
 import Provider from "../provider";
 import { getOrCreateGuestSession } from "@/services/guestSessionService";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import UserFetcher from "./UserFetcher";
 import { WebSocketProvider } from "./web-socket-context";
-
-const inter = Inter({ subsets: ["latin"] });
+import GuestSessionInitializer from "@/components/guest-session/GuestSessionInitializer";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -15,23 +13,34 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children, params: { locale } }: RootLayoutProps) {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    getOrCreateGuestSession();
+    getOrCreateGuestSession().finally(() => {
+      setLoading(false); // Ẩn spinner sau khi load xong
+    });
   }, []);
 
   return (
-    <html lang={locale}>
-      <body className={inter.className} suppressHydrationWarning={true}>
-        <Provider>
-          <WebSocketProvider>
-            <UserFetcher>
-              <div className="flex flex-col min-h-screen mx-auto">
-                <div className="flex-grow">{children}</div>
+    <>
+      <GuestSessionInitializer />
+      <Provider>
+        <WebSocketProvider>
+          <UserFetcher>
+            {/* Spinner hiển thị khi loading */}
+            {loading && (
+              <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+                <div className="w-10 h-10 border-4 border-gray-300 border-t-[#C4A300] rounded-full animate-spin"></div>
               </div>
-            </UserFetcher>
-          </WebSocketProvider>
-        </Provider>
-      </body>
-    </html>
+            )}
+
+            {/* Nội dung chính */}
+            <div className="flex flex-col min-h-screen mx-auto">
+              <div className="flex-grow">{children}</div>
+            </div>
+          </UserFetcher>
+        </WebSocketProvider>
+      </Provider>
+    </>
   );
 }

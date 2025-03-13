@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface BaseEntity {
     id: string;
     name: string;
