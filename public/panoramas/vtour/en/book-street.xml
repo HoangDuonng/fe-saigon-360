@@ -238,7 +238,7 @@
 
 		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="29.480" atv="22.055" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
 		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-42.300" atv="25.286" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
-		<hotspot name="callout_nha-tho-duc-ba" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="-5.279" atv="-16.202" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-vi.html', 'width:100%;height:100%;');" title="Information about Notre-Dame Cathedral" content="Notre-Dame Cathedral Basilica of Saigon, commonly known as Notre-Dame Cathedral, is the cathedral of the Archdiocese of Saigon. The church is not only a symbol of Catholicism in Vietnam but also one of the unique architectural landmarks of Ho Chi Minh City and a popular destination for tourists." />
+		<hotspot name="callout_nha-tho-duc-ba" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="-5.279" atv="-16.202" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-en.html', 'width:100%;height:100%;');" title="Information about Notre-Dame Cathedral" content="Notre-Dame Cathedral Basilica of Saigon, commonly known as Notre-Dame Cathedral, is the cathedral of the Archdiocese of Saigon. The church is not only a symbol of Catholicism in Vietnam but also one of the unique architectural landmarks of Ho Chi Minh City and a popular destination for tourists." />
 
 	</scene>
 

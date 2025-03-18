@@ -5,6 +5,8 @@ const Images = {
     google: '/assets/images/google.png',
     vietnam: '/assets/images/vietnamflag.png',
     england: '/assets/images/england.png',
+    district1: '/assets/images/connguoi.png',
+    test: '/assets/images/duongsach.png'
 };
 
 export default Images;

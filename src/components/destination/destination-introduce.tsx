@@ -89,7 +89,7 @@ const DestinationCard = ({ destination, locale }: DestinationCardProps) => (
         {/* Nút "Xem chi tiết" */}
         <Link
           href={`/${locale}/${destination.link}`}
-          className="mt-4 w-max px-4 py-2 text-sm font-medium text-yellow-600 border-2 border-yellow-600 rounded-lg hover:bg-yellow-600 hover:text-yellow transition-all duration-500"
+          className="text-black font-light mt-4 w-max px-4 py-2 text-sm font-medium text-yellow-600 border-2 border-yellow-600 rounded-lg hover:bg-yellow-600 hover:text-yellow transition-all duration-500"
         >
           {locale === 'en' ? 'See details' : 'Xem chi tiết'}
         </Link>
@@ -118,7 +118,7 @@ const DestinationCard = ({ destination, locale }: DestinationCardProps) => (
               {/* Nút "Xem thêm" */}
               {list.length > 2 && !showAll && (
                 <button
-                  className="mt-6 px-6 w-max text-sm font-medium text-yellow-600 border-yellow-600 rounded-lg hover:bg-yellow-600 hover:text-yellow transition-all duration-500 underline"
+                  className="text-black mt-6 px-6 w-max text-sm font-medium text-yellow-600 border-yellow-600 rounded-lg hover:bg-yellow-600 hover:text-yellow transition-all duration-500 underline"
                   onClick={() => setShowAll(true)}
                 >
                   {locale === 'en' ? 'Show more' : 'Xem thêm'}

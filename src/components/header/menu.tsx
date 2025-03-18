@@ -32,7 +32,6 @@ export default function Menu() {
   const [menu, setMenu] = useState<MenuItem[]>([]);
   const [activeItem, setActiveItem] = useState<MenuItem | null>(null);
 
-
   const handleLogout = async () => {
     const accessToken = Cookies.get('access_token'); // Lấy access token từ cookies
     // Gọi API logout và truyền access_token qua header
@@ -113,7 +112,13 @@ export default function Menu() {
                 </div>
               )
           )}
+          <Link href={`/${locale}/vtour-travel`}>
+            <button className="px-1 py-1 block font-light text-white text-sm transition hover:text-red">
+              {locale === "en" ? "Panorama" : "Toàn cảnh"}
+            </button>
+        </Link>
         </div>
+        
 
         <LocalSwitcher />
         <LoginButton />

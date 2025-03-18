@@ -25,7 +25,7 @@ export const handleLogin = async (
         });
         Cookies.set('sessionId', user_id);
 
-        const response = await axiosClientFe.get(`/profile/?pid=${user_id}`);
+        const response = await axiosClientFe.get(`/api/profile/?pid=${user_id}`);
 
         console.log('chekcrersssssss: ', response);
 

@@ -20,7 +20,7 @@ export default function GoogleButton() {
     const user = useSelector((state: RootState) => state.user);
     const dispatch = useDispatch();
     const router = useRouter();
-    const hrefs = `/${locale}/profile`;
+    const hrefs = `/${locale}/api/profile`;
     const [showMenu, setShowMenu] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
 
@@ -51,7 +51,6 @@ export default function GoogleButton() {
 
     useEffect(() => {
         console.log('Redux user:', user);
-
         const handleClickOutside = (event: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
                 setShowMenu(false);
@@ -93,7 +92,6 @@ export default function GoogleButton() {
             console.error('Error during logout:', error);
         }
     };
-    
 
     return (
         <div ref={menuRef} className="relative">
