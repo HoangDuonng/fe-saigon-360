@@ -16,6 +16,7 @@ export const WebSocketProvider = ({ children }: { children: React.ReactNode }) =
 
   useEffect(() => {
     const sessionId = Cookies.get("sessionId");
+    console.log("WS from provider: ", sessionId);
     if (sessionId) {
       const ws = new WebSocketService(
         (message) => {

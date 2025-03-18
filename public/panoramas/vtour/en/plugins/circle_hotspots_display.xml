@@ -1,0 +1,141 @@
+<krpano>
+
+	<events	name="hs_circle1_events_1" keep="true" 
+            onnewscene="add_layers_hs_deselect_on_ondown_event1();
+                        generate_circle_hotspots_images1();
+                        set(events[hs_circle1_events_1].onnewscene, generate_circle_hotspots_images1(););"
+            onmousedown="select_hs1();"/>
+    
+	<action	name="generate_circle_hotspots_images1" scope="local">
+		for(set(h,0), h LT hotspot.count, inc(h);,
+			if(hotspot[get(h)].style == 'hs_circle1',
+				txtadd(hs_circle1,get(hotspot[get(h)].name),'_img');
+				addhotspot(get(hs_circle1));
+                hotspot[get(hs_circle1)].loadstyle(hs_circle1_img);
+				copy(hotspot[get(hs_circle1)].ath,hotspot[get(h)].ath);
+				copy(hotspot[get(hs_circle1)].atv,hotspot[get(h)].atv);
+                txtadd(hotspot[get(hs_circle1)].url, '%HTMLPATH%/plugins/circular_thumbs/',get(hotspot[get(h)].name),'.png');
+                <!-- set(hotspot[get(hs_circle1)].scale,0.3); -->
+
+                txtadd(hs_tag,get(hotspot[get(h)].name),'_tag');        
+                addhotspot(get(hs_tag));        
+                hotspot[get(hs_tag)].loadstyle(hs_circle1_tag);
+				copy(hotspot[get(hs_tag)].ath,hotspot[get(h)].ath);
+				copy(hotspot[get(hs_tag)].atv,hotspot[get(h)].atv);
+                txtadd(hotspot[get(hs_tag)].html, '[h1]',get(hotspot[get(h)].tag),'[/h1]');
+                set(hotspot[get(hs_tag)].oy,65);););
+	</action> 
+    
+    <action name="add_layers_hs_deselect_on_ondown_event1" scope="local">
+        for(set(l,0), l LT layer.count, inc(l);,
+            txtadd(layer[get(l)].ondown, get(layer[get(l)].ondown), ' select_hs1();'););
+    </action>
+    
+    <!-- Main Circle Hotspots Style, the one user sees right away -->
+    
+    <style name="hs_circle1" 
+        type="image"
+        url="hs_circle1.png"
+        scale="0.8"
+        flying="0.03"
+		onover="select_hs1(get(name));"
+        onout=""
+        onout.desktop="select_hs1();"
+        onclick2="loadscene(get(name),null,MERGE,get(skin_settings.loadscene_blend));"
+		onclick="if(name != @selected_hs,
+					select_hs1(get(name));
+					looktohotspot(get(name),get(view.fov));
+					set(enabled,false);
+                    select_hs1();
+					lookto(get(hotspot[get(name)].ath),get(hotspot[get(name)].atv),get(view.fovmin),smooth(100,-100,120),true,false);
+                    WAIT();                 
+                    onclick2());"
+		onclick.desktop="
+					set(enabled,false);
+					lookto(get(hotspot[get(name)].ath),get(hotspot[get(name)].atv),get(view.fovmin),smooth(100,-100,120),true,false);
+                    WAIT();
+                    onclick2();"/>
+    
+    <!-- Hidden Circle Thumbs Style, the one user sees when hotspot is activated -->    
+    
+    <style name="hs_circle1_img" 
+        type="image"
+        url="hs_circle1.png"
+        scale="0.8"
+        alpha="1"
+        flying="0.03"
+        zorder="999999"
+        enabled="false"/>       
+    
+    <!-- Circle Hotspot Tag (Textfield) Style, shows the name of the next scene when hotspot is activated -->
+    
+    <style name="hs_circle1_tag" 
+        type="text"
+        alpha="1"
+        zorder="999999"
+        flying="0.03"
+        enabled="false"
+        padding="5 25 5 25"
+        bg="true"
+        bgalpha="0.8"
+        bgcolor="get:skin_settings.design_bgcolor"
+        bgroundedge="10"
+        onautosized="false"
+        oversampling="3"
+        mipmapping="2"
+        css="h1{font-family:Helvetica; font-size:12px; color:#B2910E; margin:0px;}"
+        />
+
+	<action name="select_hs1">
+		<!-- Deanimate Selected Hotspot, @selected_hs is a global variable which stores the name of the selected hotspot -->
+            hs_anim_off1(get(@selected_hs));
+
+		<!-- Select & Animate New Hotspot -->
+			set(@selected_hs, %1);
+			ifnot(%1 == null, 
+				hs_anim_on1(get(@selected_hs)););
+	</action>
+    
+    <action name="hs_anim_on1">
+        <!-- Hiển thị tag -->
+        txtadd(hs_tag,%1,'_tag'); 
+        tween(hotspot[get(hs_tag)].alpha,1,0.3);
+        set(hotspot[get(hs_tag)].zorder, 999999);
+
+        <!-- Ẩn hotspot gốc -->
+        set(hotspot[%1].zorder, 999999);
+        tween(hotspot[%1].alpha, 0, 0.3, easeoutcubic);
+
+        <!-- Giữ ảnh circle thumbnail hiển thị -->
+        txtadd(hs_img, %1 , '_img');
+        tween(hotspot[get(hs_img)].alpha,1,0.3,easeoutcubic);
+        set(hotspot[get(hs_img)].scale,1);
+
+    </action>
+
+	
+    <action name="hs_anim_off1">
+        <!-- Chỉ ẩn tag nếu không hover -->
+        if(device.desktop == true, 
+            ifnot(hotspot[%1].hovering == true, 
+                txtadd(hs_tag,%1,'_tag'); 
+                tween(hotspot[get(hs_tag)].alpha,11,0.3);
+
+            );
+        ,
+            txtadd(hs_tag,%1,'_tag');
+            tween(hotspot[get(hs_tag)].alpha,0,0.3);
+        );
+
+        <!-- Luôn giữ ảnh hotspot hiện -->
+        set(hotspot[%1].zorder, 100);
+        tween(hotspot[%1].alpha, 1, 0.3, easeoutcubic);
+        
+        <!-- Giữ ảnh thumbnail hiện thay vì ẩn -->
+        txtadd(hs_img, %1 , '_img');        
+        tween(hotspot[get(hs_img)].alpha,1,0.3,easeoutcubic); 
+        set(hotspot[get(hs_img)].scale,0.8);
+    </action>
+
+    
+</krpano>    

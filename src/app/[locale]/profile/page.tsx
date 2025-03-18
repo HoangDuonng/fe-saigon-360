@@ -12,6 +12,7 @@ import axiosClientFe from '@/helpers/call-fe';
 import axiosFe from "@/helpers/call-fe";
 import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 interface Destination {
     id: string;
@@ -27,9 +28,9 @@ export default function ProfileAndFavorites() {
     const [favorites, setFavorites] = useState<Destination[]>([]);
 
     const handleLogout = async () => {
-        const accessToken = Cookies.get('access_token'); 
-        console.log("Access Token:", accessToken); 
-    
+        const accessToken = Cookies.get('access_token');
+        console.log("Access Token:", accessToken);
+
         try {
             const response = await axiosClientFe.post(
                 `/api/logout`,
@@ -41,7 +42,7 @@ export default function ProfileAndFavorites() {
                 }
             );
             console.log("Logout response:", response); // Xem phản hồi từ API
-    
+
             if (response.status === 200) {
                 dispatch(clearUser());
                 Cookies.remove('refresh_token');
@@ -55,7 +56,7 @@ export default function ProfileAndFavorites() {
             console.error('Error during logout:', error);
         }
     };
-    
+
     useEffect(() => {
         const controller = new AbortController();
         const signal = controller.signal;
@@ -158,18 +159,20 @@ export default function ProfileAndFavorites() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {favorites.map((destination) => (
                                 <div key={destination.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform">
-                                    {destination.imageUrl && (
-                                        <Image
-                                            src={destination.imageUrl}
-                                            alt={destination.name}
-                                            width={400}
-                                            height={300}
-                                            className="w-full h-56 object-cover"
-                                        />
-                                    )}
-                                    <div className="p-4">
-                                        <h2 className="text-lg font-semibold text-gray-800">{destination.name}</h2>
-                                    </div>
+                                    <Link href={`/${locale}/destinations/${destination.id}`}>
+                                        {destination.imageUrl && (
+                                            <Image
+                                                src={destination.imageUrl}
+                                                alt={destination.name}
+                                                width={400}
+                                                height={300}
+                                                className="w-full h-56 object-cover"
+                                            />
+                                        )}
+                                        <div className="p-4">
+                                            <h2 className="text-lg font-semibold text-gray-800">{destination.name}</h2>
+                                        </div>
+                                    </Link>
                                 </div>
                             ))}
                         </div>

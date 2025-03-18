@@ -4,6 +4,7 @@ import axiosFe from "@/helpers/call-fe";
 import { RootState } from "@/redux/store";
 import { useLocale } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -77,18 +78,21 @@ export default function FavouriteDestination() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {favorites.map((destination) => (
                             <div key={destination.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform">
-                                {destination.imageUrl && (
-                                    <Image
-                                        src={destination.imageUrl}
-                                        alt={destination.name}
-                                        width={400}
-                                        height={300}
-                                        className="w-full h-56 object-cover"
-                                    />
-                                )}
-                                <div className="p-4">
-                                    <h2 className="text-lg font-semibold text-gray-800">{destination.name}</h2>
-                                </div>
+                                <Link href={`/${locale}/destinations/${destination.id}`}>
+                                    {destination.imageUrl && (
+                                        <Image
+                                            src={destination.imageUrl}
+                                            alt={destination.name}
+                                            width={400}
+                                            height={300}
+                                            className="w-full h-56 object-cover"
+                                        />
+                                    )}
+                                    {/* en/destinations/saigon-notre-dame-cathedral */}
+                                    <div className="p-4">
+                                        <h2 className="text-lg font-semibold text-gray-800">{destination.name}</h2>
+                                    </div>
+                                </Link>
                             </div>
                         ))}
                     </div>
