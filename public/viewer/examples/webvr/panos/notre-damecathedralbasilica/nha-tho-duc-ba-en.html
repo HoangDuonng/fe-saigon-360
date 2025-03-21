@@ -1,0 +1,230 @@
+<html lang="en">
+<head>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@v4.0.0/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    }
+
+    .content-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    model-viewer {
+      width: 50%;
+      height: 100%;
+      background: #f9fafb;
+    }
+
+    .description {
+      width: 50%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background: #ffffff;
+      overflow-y: auto;
+      border-left: 5px solid #1d4ed8;
+    }
+
+    .description h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #1d4ed8;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .description p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .accordion {
+      margin-bottom: 20px;
+      cursor: pointer;
+      padding: 15px;
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .accordion:hover {
+      background: #e5e7eb;
+    }
+
+    .accordion-content {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border-top: 1px solid #d1d5db;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-content img:hover {
+      transform: scale(1.05);
+    }
+
+    .read-more-btn {
+      align-self: center;
+      padding: 10px 20px;
+      background: #1d4ed8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .read-more-btn:hover {
+      background: #2563eb;
+    }
+
+    .audio-player-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: opacity 0.5s ease;
+    }
+
+    .audio-player-container:hover {
+      opacity: 1;
+    }
+
+    .audio-off-btn {
+      background: #dc2626;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .audio-off-btn:hover {
+      background: #ef4444;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .content-container {
+        flex-direction: column;
+      }
+      model-viewer, .description {
+        width: 100%;
+        height: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="content-container">
+  <model-viewer
+    src="./nha-tho-duc-ba.glb"
+    alt="3D Model of Notre-Dame Cathedral"
+    camera-controls
+    auto-rotate
+    touch-action="pan-y"
+    tone-mapping="aces"
+    shadow-intensity="1"
+    camera-orbit="90deg 90deg 8m">
+  </model-viewer>
+
+  <div class="description">
+    <h3>Notre-Dame Cathedral of Saigon</h3>
+    <p>Notre-Dame Cathedral is a prominent architectural landmark of Saigon, built in 1877 and completed in 1883. Located in the heart of District 1, the cathedral is a cultural and historical symbol of Ho Chi Minh City. The structure features Roman and Gothic architectural styles, with two bell towers standing 58 meters tall in the city center. The cathedral's main building materials were imported from France, including red bricks from Marseille and stained glass from Chartres, contributing to its timeless beauty and durability. Inside, the cathedral can accommodate up to 1,200 people and serves as a significant place of worship for the Catholic community. Beyond its religious significance, Notre-Dame Cathedral is also a major attraction for both domestic and international tourists. With its long history and unique architecture, the cathedral is an iconic symbol of the city's development, preserving invaluable cultural and historical values.</p>
+
+    <div class="accordion" onclick="toggleAccordion(this)">Architecture
+      <div class="accordion-content">
+        <p>The cathedral's design consists of a main nave, two side aisles, and two rows of chapels, measuring 93 meters in length, 35 meters in width, and 21 meters in height, with a seating capacity of 1,200 people. The interior features two rows of columns symbolizing the 12 apostles, while the main altar, crafted from marble, showcases exquisite carvings. Originally, the cathedral had 56 stained-glass windows depicting biblical scenes, but most were replaced after World War II. On the organ loft, there was once a historic pipe organ, but it has been damaged over time due to termites destroying the wooden keyboard components.</p>
+      </div>
+    </div>
+
+    <div class="accordion" onclick="toggleAccordion(this)">Historical Significance
+      <div class="accordion-content">
+        <p>In 1958, Father Joseph Pham Van Thien, who was in charge of the Saigon parish at the time, commissioned a statue of Our Lady of Peace, sculpted from white Carrara marble from Italy. The statue was carved in Pietrasanta, about 500 kilometers from Rome. Once completed, it was transported on the ship Oyanox from the port of Genoa on January 8, 1959, and arrived in Saigon on February 15, 1959. Subsequently, the Société d'Entreprises company erected the statue on the empty pedestal in front of the cathedral, which had remained vacant since 1945. Father Joseph personally wrote a prayer asking the Virgin Mary to grant peace to Vietnam and recited it in front of a large audience.
+
+          The following day, on February 17, 1959, Cardinal Krikor Bedros XV Aghagianian from Rome arrived in Saigon to preside over the closing ceremony of the National Marian Congress and performed the statue's blessing. This event led to the cathedral being officially named the Saigon Notre-Dame Cathedral. On December 5, 1959, the Vatican granted permission for the anointing ceremony, elevating the cathedral to the status of a minor basilica. Since then, its official name has been Basilique Cathédrale Notre-Dame de Saigon. In 1960, when the Holy See established the Vietnamese hierarchy with three archdioceses in Hanoi, Hue, and Saigon, the cathedral became the official seat of the Archbishop of Saigon, a role it continues to hold today.</p>
+      </div>
+    </div>
+
+    <div class="accordion" onclick="toggleAccordion(this)">Culture & Tourism
+      <div class="accordion-content">
+        <p>Notre-Dame Cathedral of Saigon is a cultural icon and a major tourist attraction in Ho Chi Minh City. With its distinctive Romanesque-Gothic architecture, the cathedral captivates visitors with its antique beauty, solemn atmosphere, and unique stained-glass artistry. Every day, the site welcomes numerous tourists and worshippers. The square in front of the cathedral, featuring the statue of Our Lady of Peace, is a popular check-in spot. Major Catholic events, such as Christmas celebrations, draw large crowds, creating an atmosphere that is both reverent and vibrant.</p>
+      </div>
+    </div>
+    <img src="/assets/images/nhathoducba.png" alt="Ho Chi Minh City" />
+    <p>Notre-Dame Cathedral Image</p>
+    <img src="/assets/images/tuong-duc-me.png" alt="Virgin Mary Statue" />
+    <p>Virgin Mary Statue Image</p>
+
+    <button class="read-more-btn" onclick="toggleAll()">See more / Collapse</button>
+</div>
+
+<div class="audio-player-container">
+  <audio class="audio-player" controls loop>
+    <source src="../../audio/intro-nha-tho-duc-ba-en.mp3" type="audio/mp3">
+    Your browser does not support audio.
+  </audio>
+  <button class="audio-off-btn" onclick="turnOffAudio()">Turn Off Audio</button>
+</div>
+
+<script>
+  function toggleAccordion(element) {
+    const content = element.querySelector('.accordion-content');
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function toggleAll() {
+    const contents = document.querySelectorAll('.accordion-content');
+    contents.forEach(content => {
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+
+  function turnOffAudio() {
+    const audio = document.querySelector('.audio-player');
+    audio.pause();
+    audio.currentTime = 0;
+  }
+</script>
+</body>
+</html>

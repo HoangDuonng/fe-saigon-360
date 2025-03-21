@@ -40,10 +40,6 @@ export default function Footer() {
                 <div className="flex flex-col w-full md:w-1/5 text-sm p-4 md:text-[16px] space-y-4">
                     <span className="text-black py-2 font-medium">{locale === "en" ? "Info" : "Thông tin"}</span>
                     {[
-                        locale === "en" ?
-                            <Link href="https://portfolio-howlanh.vercel.app/">Portfolio</Link>
-                            :
-                            <Link href="https://portfolio-howlanh.vercel.app/">Thông tin @howlanh</Link>,
                         locale === "en" ? "Join us" : "Tham gia cùng chúng tôi",
                         locale === "en" ? "Privacy and Policy" : "Chính sách bảo mật",
 

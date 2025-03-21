@@ -211,56 +211,21 @@
 		<image>
 			<cube url="panos/nha-sach.tiles/pano_%s.jpg" />
 		</image>
-		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle" ath="149.739" atv="1.023" linkedscene="scene_nha-tho-duc-ba" tag="Discover now" />
 		<hotspot name="callout_nha-tho-duc-ba-3d" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="150.372" atv="-9.089" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-en.html', 'width:100%;height:100%;');"/>
-		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="149.372" atv="1.089" title="Information about Notre-Dame Cathedral" content="Notre-Dame Cathedral Basilica of Saigon, commonly known as Notre-Dame Cathedral, is the cathedral of the Archdiocese of Saigon. The church is not only a symbol of Catholicism in Vietnam but also one of the unique architectural landmarks of Ho Chi Minh City and a popular destination for tourists." />
-
-		<hotspot name="scene_cong-vien-30-thang-4" style="hs_circle" ath="-18.182" atv="1.303" linkedscene="scene_cong-vien-30-thang-4" tag="Discover now" />
-		<hotspot name="callout_cong-vien-30-thang-4" style="callout" ath="-18.182" atv="1.303" linkedscene="scene_cong-vien-30-thang-4" title="April 30th Park" content="A green space in the heart of Ho Chi Minh City, perfect for relaxing and people-watching." />
-
-		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-19.927" atv="18.993" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
-		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="149.705" atv="21.197" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
-		<!-- <hotspot name="callout_nha-tho-duc-ba" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="150.372" atv="-9.089" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-vi.html', 'width:100%;height:100%;');" title="Information about Notre-Dame Cathedral" content="Notre-Dame Cathedral Basilica of Saigon, commonly known as Notre-Dame Cathedral, is the cathedral of the Archdiocese of Saigon. The church is not only a symbol of Catholicism in Vietnam but also one of the unique architectural landmarks of Ho Chi Minh City and a popular destination for tourists." /> -->
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-19.927" atv="18.993" onclick="skin_loadscene(scene_BookStreet2, get(skin_settings.loadscene_blend))" />
 	</scene>
 
-	<scene name="scene_nha-tho-duc-ba" title="Notre-Dame Cathedral Basilica of Saigon" onstart="" thumburl="panos/nha-tho-duc-ba.tiles/thumb.jpg" lat="" lng="" heading="">
-		<view hlookat="0.237" vlookat="0.000" fovtype="MFOV" fov="84.034" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-34.047" vlookatmax="34.047"/>
-		<preview url="panos/nha-tho-duc-ba.tiles/preview.jpg"/>
+	<scene name="scene_BookStreet2" title="BookStreet2" onstart="" thumburl="panos/BookStreet2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.875" vlookatmax="32.875" />
+
+		<preview url="panos/BookStreet2.tiles/preview.jpg" />
+
 		<image>
-		<cube url="panos/nha-tho-duc-ba.tiles/pano_%s.jpg"/>
+			<cube url="panos/BookStreet2.tiles/pano_%s.jpg" />
 		</image>
-		<hotspot name="scene_nha-sach" style="hs_circle" ath="30.000" atv="10.000" linkedscene="scene_nha-sach" tag="Discover now" />
-		<hotspot name="callout_nha-sach" style="callout" ath="30.000" atv="10.000" linkedscene="scene_nha-sach" title="Ho Chi Minh City Book Street" content="Ho Chi Minh City Book Street – A cultural space for book lovers, where great works gather and readers connect with authors!" />
-
-		<hotspot name="scene_cong-vien-30-thang-4" style="hs_circle" ath="-41.937" atv="14.127" linkedscene="scene_nha-sach" tag="Discover now" />
-		<hotspot name="callout_cong-vien-30-thang-4" style="callout" ath="-41.937" atv="14.127" linkedscene="scene_cong-vien-30-thang-4" title="April 30th Park" content="A green space in the heart of Ho Chi Minh City, perfect for relaxing and people-watching." />
-
-
-		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="29.480" atv="22.055" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
-		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-42.300" atv="25.286" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
-		<hotspot name="callout_nha-tho-duc-ba" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="-5.279" atv="-16.202" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-en.html', 'width:100%;height:100%;');" title="Information about Notre-Dame Cathedral" content="Notre-Dame Cathedral Basilica of Saigon, commonly known as Notre-Dame Cathedral, is the cathedral of the Archdiocese of Saigon. The church is not only a symbol of Catholicism in Vietnam but also one of the unique architectural landmarks of Ho Chi Minh City and a popular destination for tourists." />
-
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-12.636" atv="25.406" onclick="skin_loadscene(scene_nha-sach, get(skin_settings.loadscene_blend))" />
 	</scene>
-
-	<scene name="scene_cong-vien-30-thang-4" title="April 30th Park" onstart="" thumburl="panos/cong-vien-30-thang-4.tiles/thumb.jpg" lat="" lng="" heading="">
-		<view hlookat="17.249" vlookat="0.000" fovtype="MFOV" fov="83.088" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.607" vlookatmax="33.607"/>
-		<preview url="panos/cong-vien-30-thang-4.tiles/preview.jpg"/>
-		<image>
-		<cube url="panos/cong-vien-30-thang-4.tiles/pano_%s.jpg"/>
-		</image>
-
-		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle" ath="-101.819" atv="8.031" linkedscene="scene_nha-tho-duc-ba" tag="Discover now" />
-		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="-101.819" atv="8.031" linkedscene="scene_nha-sach" title="Notre-Dame Cathedral (Saigon)" content="Notre-Dame Cathedral (Saigon)" />
-		
-		<hotspot name="scene_nha-sach" style="hs_circle" ath="-165.264" atv="9.800" linkedscene="scene_nha-sach" tag="Discover now" />
-		<hotspot name="callout_nha-sach" style="callout" ath="-165.264" atv="9.800" linkedscene="scene_nha-sach" title="Ho Chi Minh City Book Street" content="Ho Chi Minh City Book Street – A cultural space for book lovers, where great works gather and readers connect with authors!" />
-
-		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-99.449" atv="27.979" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
-		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-165.922" atv="27.667" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
-	</scene>
-
-	
-
 
 	<!-- Actions -->
 	<action name="show_info_popup">

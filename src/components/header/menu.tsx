@@ -114,7 +114,7 @@ export default function Menu() {
           )}
           <Link href={`/${locale}/vtour-travel`}>
             <button className="px-1 py-1 block font-light text-white text-sm transition hover:text-red">
-              {locale === "en" ? "Panorama" : "Toàn cảnh"}
+              {locale === "en" ? "Virtual Tour" : "Tham quan thực tế ảo"}
             </button>
         </Link>
         </div>

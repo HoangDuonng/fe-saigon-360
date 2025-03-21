@@ -194,9 +194,7 @@
 		<image>
 			<cube url="panos/metro_cong_le_loi.tiles/pano_%s.jpg" />
 		</image>
-		<hotspot name="scene_metro-soat-ve" style="hs_circle" ath="81.606" atv="11.560" linkedscene="scene_metro-soat-ve" tag="Discover now" />
-		<hotspot name="callout_metro-soat-ve" style="callout" ath="81.606" atv="11.560" linkedscene="scene_metro-soat-ve" title="Metro Ticket Gate" content="Metro Ticket Gate. " />
-		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="81.447" atv="24.071" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="81.447" atv="24.071" onclick="skin_loadscene(scene_metro-soat-ve, get(skin_settings.loadscene_blend))" />
 	</scene>
 
 	<scene name="scene_tau-dien" title="Metro Electric Train" onstart="" thumburl="panos/tau-dien.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -205,11 +203,7 @@
 		<image>
 		<cube url="panos/tau-dien.tiles/pano_%s.jpg"/>
 		</image>
-
-		<hotspot name="scene_metro-soat-ve" style="hs_circle" ath="-158.751" atv="12.851" linkedscene="scene_metro-soat-ve" tag="Discover now" />
-		<hotspot name="callout_metro-soat-ve" style="callout" ath="-158.751" atv="12.851" linkedscene="scene_metro-soat-ve" title="Metro Ticket Gate" content="Metro Ticket Gate. " />
-
-		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-157.441" atv="25.347" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-157.441" atv="25.347" onclick="skin_loadscene(scene_metro-soat-ve, get(skin_settings.loadscene_blend))" />
 	</scene>
 
 	<scene name="scene_metro-soat-ve" title="Metro Ticket Gate" onstart="" thumburl="panos/metro-soat-ve.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -219,17 +213,9 @@
 		<cube url="panos/metro-soat-ve.tiles/pano_%s.jpg"/>
 		</image>
 
-		<hotspot name="scene_tau-dien" style="hs_circle" ath="-0.612" atv="12.866" linkedscene="scene_tau-dien" tag="Discover now" />
-		<hotspot name="callout_tau-dien" style="callout" ath="-0.612" atv="12.866" linkedscene="scene_metro_cong_le_loi" title="Metro Electric Train" content="Ho Chi Minh City's modern metro system, offering a fast and efficient way to navigate the city." />
-
-		<hotspot name="scene_metro_cong_le_loi" style="hs_circle" ath="71.471" atv="8.269" linkedscene="scene_metro_cong_le_loi" tag="Discover now" />
-		<hotspot name="callout_cong-vien-30-thang-4" style="callout" ath="71.471" atv="8.269" linkedscene="scene_metro_cong_le_loi" title="Le Loi Street" content="A vibrant boulevard in the heart of Ho Chi Minh City, known for its shopping, dining, and cultural attractions." />
-
-		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="72.948" atv="20.371" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
-		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-0.691" atv="25.520" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
-
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="72.948" atv="20.371" onclick="skin_loadscene(scene_metro_cong_le_loi, get(skin_settings.loadscene_blend))" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-0.691" atv="25.520" onclick="skin_loadscene(scene_tau-dien, get(skin_settings.loadscene_blend))" />
 	</scene>
-
 
 	<!-- Actions -->
 	<action name="show_info_popup">

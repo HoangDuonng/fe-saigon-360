@@ -1,0 +1,67 @@
+<krpano version="1.19" title="Virtual Tour" license="FXsqTqaGNSZER5dSETEm+VzQEh9sWSa5DZMFsSmMxYV9GcXs8W3R8A/mWXrG
+			NUceXvrihmh28hfRF1ivrW0HMzEychPvNiD8B/4/ZzDaUE9Rh6Ig22aKJGDb
+			ja1/kYIqmc/VKfItRE2RTSOIbIroxOtsz626NIpxWksAAifwhpNwuPXqDQpz
+			2sRUMBzoPqZktpkItoSenN2mKd8Klfx7pOuB6CIK3e1CDXgyndqOt2mWybLZ
+			cU/wfJVAecfxk15ghiqrzaDsbqrdABDowg==">
+
+	<include url="../../plugins/callout.xml"/>
+	<include url="../../plugins/circle_hotspots.xml"/>
+	<style name="arrowspot" url="../../skin/vtourskin_hotspot.png" distorted="true" vr_timeout="1000" oy="0" scale="2" />
+
+	<action name="goto">
+		mul(newdepth, depth, 2);
+		tween(depth, get(newdepth), 0.25);
+		tween(oy|alpha|rx, -400|0|45, 0.25, default, loadscene(%1, null, NOPREVIEW|MERGE|KEEPMOVING, BLEND(1)) );
+	</action>
+
+    <action name="do_crop_animation" scope="local" args="framewidth, frameheight, framerate">
+		<!-- define local variables -->
+		calc(local.xframes, (caller.imagewidth /framewidth) BOR 0);
+		calc(local.frames, xframes * ((caller.imageheight / frameheight) BOR 0));
+		def(local.frame, integer, 0);
+		
+		<!-- set the first frame -->
+		calc(caller.crop, '0|0|' + framewidth + '|' + frameheight);
+		
+		<!-- do the animation -->
+		setinterval(calc('crop_anim_' + caller.name), calc(1.0 / framerate),
+			if(caller.loaded,
+				inc(frame);
+				if(frame GE frames, if(caller.onlastframe !== null, callwith(caller, onlastframe() ) ); set(frame,0); );
+				mod(xpos, frame, xframes);
+				div(ypos, frame, xframes);
+				Math.floor(ypos);
+				mul(xpos, framewidth);
+				mul(ypos, frameheight);
+				calc(caller.crop, xpos + '|' + ypos + '|' + framewidth + '|' + frameheight);
+			  ,
+				<!-- stop the interval when the hotspot gets removed -->
+				clearinterval(calc('crop_anim_' + caller.name));
+			);
+		);
+	</action>
+
+
+	<scene name="scene_bookstreet1" title="bookstreet1" onstart="" thumburl="bookstreet1/thumb.jpg">
+		<view hlookat="0.237" vlookat="0.000" fovtype="MFOV" fov="84.034" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-34.047" vlookatmax="34.047"/>
+
+		<preview url="bookstreet1/preview.jpg" />
+
+		<image>
+			<cube url="bookstreet1/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-19.927" atv="18.993" onclick="goto(scene_bookstreet2);" />
+	</scene>
+
+	<scene name="scene_bookstreet2" title="bookstreet2" onstart="" thumburl="bookstreet2/thumb.jpg">
+		<view hlookat="0.237" vlookat="0.000" fovtype="MFOV" fov="84.034" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-34.047" vlookatmax="34.047"/>
+
+		<preview url="bookstreet2/preview.jpg" />
+
+		<image>
+			<cube url="bookstreet2/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-12.636" atv="25.406" onclick="goto(scene_bookstreet1);" />
+	</scene>
+</krpano>

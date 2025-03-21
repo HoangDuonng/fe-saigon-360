@@ -206,22 +206,7 @@
 
 	<include url="skin/vtourskin_design.xml" />
 
-	
-	<scene name="scene_hochiminh" title="hochiminh" onstart="" thumburl="panos/hochiminh.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-60.820" vlookatmax="60.820" />
-
-		<preview url="panos/hochiminh.tiles/preview.jpg" />
-
-		<image>
-			<cube url="panos/hochiminh.tiles/pano_%s.jpg" />
-		</image>
-
-		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle1" ath="-90.270" atv="11.511" linkedscene="scene_nha-tho-duc-ba" tag="Saigon Notre Dame Cathedral" />
-		<hotspot name="scene_cong-vien-30-thang-4" style="hs_circle1" ath="75.627" atv="20.390" linkedscene="scene_cong-vien-30-thang-4" tag="30 April Park" />
-		<hotspot name="scene_nha-sach" style="hs_circle1" ath="-67.664" atv="12.122" linkedscene="scene_nha-sach" tag="Ho Chi Minh Book Street" />
-	</scene>
-<scene name="scene_nha-sach" title="Book Street" onstart="" thumburl="panos/nha-sach.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_nha-sach" title="Book Street" onstart="" thumburl="panos/nha-sach.tiles/thumb.jpg" lat="" lng="" heading="">
 		<view hlookat="-211.702" vlookat="0.000" fovtype="MFOV" fov="85.418" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-34.695" vlookatmax="34.695" />
 		<preview url="panos/nha-sach.tiles/preview.jpg" />
 		<image>
@@ -230,15 +215,56 @@
 		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle" ath="149.739" atv="1.023" linkedscene="scene_nha-tho-duc-ba" tag="Discover now" />
 		<hotspot name="callout_nha-tho-duc-ba-3d" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="150.372" atv="-9.089" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-en.html', 'width:100%;height:100%;');"/>
 		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="149.372" atv="1.089" title="Information about Notre-Dame Cathedral" content="Notre-Dame Cathedral Basilica of Saigon, commonly known as Notre-Dame Cathedral, is the cathedral of the Archdiocese of Saigon. The church is not only a symbol of Catholicism in Vietnam but also one of the unique architectural landmarks of Ho Chi Minh City and a popular destination for tourists." />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="149.705" atv="21.197" onclick="skin_loadscene(scene_nha-tho-duc-ba, get(skin_settings.loadscene_blend))" />
 
-		<hotspot name="scene_cong-vien-30-thang-4" style="hs_circle" ath="-18.182" atv="1.303" linkedscene="scene_cong-vien-30-thang-4" tag="Discover now" />
-		<hotspot name="callout_cong-vien-30-thang-4" style="callout" ath="-18.182" atv="1.303" linkedscene="scene_cong-vien-30-thang-4" title="April 30th Park" content="A green space in the heart of Ho Chi Minh City, perfect for relaxing and people-watching." />
+		<hotspot name="scene_BookStreet2" style="hs_circle" ath="-18.182" atv="1.303" linkedscene="scene_BookStreet2" tag="Discover now" />
+		<hotspot name="callout_BookStreet2" style="callout" ath="-18.182" atv="1.303" linkedscene="scene_BookStreet2" title="Ho Chi Minh City Book Street Gate 2" content="Ho Chi Minh City Book Street – A cultural space for book lovers, where great works gather and readers connect with authors!" /> />
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-19.927" atv="18.993" onclick="skin_loadscene(scene_BookStreet2, get(skin_settings.loadscene_blend))" />
 
-		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-19.927" atv="18.993" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
-		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="149.705" atv="21.197" onclick="skin_loadscene(scene, get(skin_settings.loadscene_blend))" />
-		<!-- <hotspot name="callout_nha-tho-duc-ba" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="150.372" atv="-9.089" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-vi.html', 'width:100%;height:100%;');" title="Information about Notre-Dame Cathedral" content="Notre-Dame Cathedral Basilica of Saigon, commonly known as Notre-Dame Cathedral, is the cathedral of the Archdiocese of Saigon. The church is not only a symbol of Catholicism in Vietnam but also one of the unique architectural landmarks of Ho Chi Minh City and a popular destination for tourists." /> -->
 	</scene>
 
+	<scene name="scene_BookStreet2" title="BookStreet2" onstart="" thumburl="panos/BookStreet2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.875" vlookatmax="32.875" />
+
+		<preview url="panos/BookStreet2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/BookStreet2.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="scene_nha-sach" style="hs_circle" ath="-12.636" atv="5.406" linkedscene="scene_nha-sach" tag="Discover now" />
+		<hotspot name="callout_nha-sach" style="callout" ath="-12.636" atv="5.406" linkedscene="scene_nha-sach" title="Ho Chi Minh City Book Street Gate 1" content="Ho Chi Minh City Book Street – A cultural space for book lovers, where great works gather and readers connect with authors!" />
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-12.636" atv="25.406" onclick="skin_loadscene(scene_nha-sach, get(skin_settings.loadscene_blend))" />
+
+		<hotspot name="scene_diamond" style="hs_circle" ath="132.340" atv="5.849" linkedscene="scene_diamond" tag="Discover now" />
+		<hotspot name="callout_diamond" style="callout"  ath="132.340" atv="5.849" linkedscene="scene_diamond" title="Diamond Plaza" content="Diamond Plaza – A bustling commercial center in the heart of Saigon, offering shopping, entertainment, and modern workspaces." />
+		<hotspot name="spot3" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);"  ath="132.340" atv="20.849" onclick="skin_loadscene(scene_diamond, get(skin_settings.loadscene_blend))" />
+	</scene>
+
+	<!-- diamond -->
+	<scene name="scene_diamond" title="diamond" onstart="" thumburl="panos/diamond.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.635" vlookatmax="33.635" />
+
+		<preview url="panos/diamond.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/diamond.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle" ath="147.433" atv="3.891" linkedscene="scene_nha-tho-duc-ba" tag="Discover now" />
+		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="147.433" atv="3.891" linkedscene="scene_nha-sach" title="Notre-Dame Cathedral (Saigon)" content="Notre-Dame Cathedral (Saigon)" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="145.075" atv="20.218" onclick="skin_loadscene(scene_nha-tho-duc-ba, get(skin_settings.loadscene_blend))" />
+		
+		<hotspot name="scene_nha-sach" style="hs_circle" ath="105.769" atv="3.891" linkedscene="scene_nha-sach" tag="Discover now" />
+		<hotspot name="callout_nha-sach" style="callout" ath="105.769" atv="3.891" linkedscene="scene_nha-sach" title="Ho Chi Minh City Book Street Gate 1" content="Ho Chi Minh City Book Street – A cultural space for book lovers, where great works gather and readers connect with authors!" />
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="110.041" atv="24.164" onclick="skin_loadscene(scene_nha-sach, get(skin_settings.loadscene_blend))" />
+
+		<hotspot name="scene_30April" style="hs_circle" ath="-165.705" atv="7.965" linkedscene="scene_30April" tag="Discover now" />
+		<hotspot name="callout_30April" style="callout" ath="-165.705" atv="7.965" linkedscene="scene_30April" title="April 30th Park - 1" content="A green space in the heart of Ho Chi Minh City, perfect for relaxing and people-watching." />
+		<hotspot name="spot3" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);"  ath="-161.665" atv="22.517" onclick="skin_loadscene(scene_30April, get(skin_settings.loadscene_blend))" />
+	</scene>
+
+	<!-- Nha tho duc ba -->
 	<scene name="scene_nha-tho-duc-ba" title="Notre-Dame Cathedral Basilica of Saigon" onstart="" thumburl="panos/nha-tho-duc-ba.tiles/thumb.jpg" lat="" lng="" heading="">
 		<view hlookat="0.237" vlookat="0.000" fovtype="MFOV" fov="84.034" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-34.047" vlookatmax="34.047"/>
 		<preview url="panos/nha-tho-duc-ba.tiles/preview.jpg"/>
@@ -246,35 +272,174 @@
 		<cube url="panos/nha-tho-duc-ba.tiles/pano_%s.jpg"/>
 		</image>
 		<hotspot name="scene_nha-sach" style="hs_circle" ath="30.000" atv="10.000" linkedscene="scene_nha-sach" tag="Discover now" />
-		<hotspot name="callout_nha-sach" style="callout" ath="30.000" atv="10.000" linkedscene="scene_nha-sach" title="Ho Chi Minh City Book Street" content="Ho Chi Minh City Book Street – A cultural space for book lovers, where great works gather and readers connect with authors!" />
+		<hotspot name="callout_nha-sach" style="callout" ath="30.000" atv="10.000" linkedscene="scene_nha-sach" title="Ho Chi Minh City Book Street Gate 1" content="Ho Chi Minh City Book Street – A cultural space for book lovers, where great works gather and readers connect with authors!" />
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="29.480" atv="22.055" onclick="skin_loadscene(scene_nha-sach, get(skin_settings.loadscene_blend))" />
 
-		<hotspot name="scene_cong-vien-30-thang-4" style="hs_circle" ath="-41.937" atv="14.127" linkedscene="scene_nha-sach" tag="Discover now" />
-		<hotspot name="callout_cong-vien-30-thang-4" style="callout" ath="-41.937" atv="14.127" linkedscene="scene_cong-vien-30-thang-4" title="April 30th Park" content="A green space in the heart of Ho Chi Minh City, perfect for relaxing and people-watching." />
+		<hotspot name="scene_30April" style="hs_circle" ath="-41.937" atv="14.127" linkedscene="scene_30April" tag="Discover now" />
+		<hotspot name="callout_30April" style="callout" ath="-41.937" atv="14.127" linkedscene="scene_30April" title="April 30th Park - 1" content="A green space in the heart of Ho Chi Minh City, perfect for relaxing and people-watching." />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-42.300" atv="25.286" onclick="skin_loadscene(scene_30April, get(skin_settings.loadscene_blend))" />
 
-
-		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="29.480" atv="22.055" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
-		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-42.300" atv="25.286" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
 		<hotspot name="callout_nha-tho-duc-ba" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="-5.279" atv="-16.202" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-en.html', 'width:100%;height:100%;');" title="Information about Notre-Dame Cathedral" content="Notre-Dame Cathedral Basilica of Saigon, commonly known as Notre-Dame Cathedral, is the cathedral of the Archdiocese of Saigon. The church is not only a symbol of Catholicism in Vietnam but also one of the unique architectural landmarks of Ho Chi Minh City and a popular destination for tourists." />
 
+		<hotspot name="scene_PostStation1" style="hs_circle" ath="55.798" atv="10.220" linkedscene="scene_PostStation1" tag="Discover now" />
+		<hotspot name="callout_PostStation1" style="callout" ath="55.798" atv="10.220" linkedscene="scene_PostStation1" title="Saigon Central Post Office" content="A historic architectural gem of Ho Chi Minh City, the Saigon Central Post Office blends French colonial design with vibrant local culture." />
+		<hotspot name="spot3" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="56.257" atv="30.361" onclick="skin_loadscene(scene_PostStation1, get(skin_settings.loadscene_blend))" />
+
+		<hotspot name="scene_pho-di-bo-NH-3" style="hs_circle" ath="173.970" atv="7.408" linkedscene="scene_pho-di-bo-NH-3" tag="Discover now" />
+		<hotspot name="scene_pho-di-bo-NH-3" style="callout" ath="173.970" atv="7.408" linkedscene="scene_pho-di-bo-NH-3" title="Nguyen Hue Walking Street" content="A vibrant pedestrian street in the heart of Ho Chi Minh City, where locals and tourists enjoy music, street performances, and cultural events." />
+		<hotspot name="spot3" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="173.970" atv="24.408" onclick="skin_loadscene(scene_pho-di-bo-NH-3, get(skin_settings.loadscene_blend))" />
 	</scene>
 
+	<!-- 30/4 1 -->
+	<scene name="scene_30April" title="30April" onstart="" thumburl="panos/30April.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.363" vlookatmax="32.363" />
+
+		<preview url="panos/30April.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/30April.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle" ath="3.998" atv="-10.751" linkedscene="scene_nha-tho-duc-ba" tag="Discover now" />
+		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="3.998" atv="-10.751" linkedscene="scene_nha-tho-duc-ba" title="Notre-Dame Cathedral (Saigon)" content="Notre-Dame Cathedral (Saigon)" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="3.998" atv="20.751" onclick="skin_loadscene(scene_nha-tho-duc-ba, get(skin_settings.loadscene_blend))" />
+		
+		<hotspot name="scene_cong-vien-30-thang-4" style="hs_circle" ath="-250.264" atv="9.800" linkedscene="scene_cong-vien-30-thang-4" tag="Discover now" />
+		<hotspot name="callout_cong-vien-30-thang-4" style="callout" ath="-250.264" atv="9.800" linkedscene="scene_cong-vien-30-thang-4" title="April 30th Park - 2" content="A green space in the heart of Ho Chi Minh City, perfect for relaxing and people-watching." />
+		<hotspot name="spot3" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-250.264" atv="25.800" onclick="skin_loadscene(scene_cong-vien-30-thang-4, get(skin_settings.loadscene_blend))" />
+
+		<hotspot name="scene_diamond" style="hs_circle" ath="-89.449" atv="0.979" linkedscene="scene_diamond" tag="Discover now" />
+		<hotspot name="callout_diamond" style="callout" ath="-89.449" atv="0.979" linkedscene="scene_diamond" title="Diamond Place" content="Diamond Place" />
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-89.449" atv="20.979" onclick="skin_loadscene(scene_diamond, get(skin_settings.loadscene_blend))" />
+	</scene>
+
+
+	<!-- 30/4 2 -->
 	<scene name="scene_cong-vien-30-thang-4" title="April 30th Park" onstart="" thumburl="panos/cong-vien-30-thang-4.tiles/thumb.jpg" lat="" lng="" heading="">
 		<view hlookat="17.249" vlookat="0.000" fovtype="MFOV" fov="83.088" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.607" vlookatmax="33.607"/>
 		<preview url="panos/cong-vien-30-thang-4.tiles/preview.jpg"/>
 		<image>
 		<cube url="panos/cong-vien-30-thang-4.tiles/pano_%s.jpg"/>
 		</image>
+		<hotspot name="scene_30April" style="hs_circle" ath="-164.001" atv="5.678" linkedscene="scene_30April" tag="Discover now" />
+		<hotspot name="callout_30April" style="callout" ath="-164.001" atv="5.678" linkedscene="scene_30April" title="April 30th Park - 1" content="A green space in the heart of Ho Chi Minh City, perfect for relaxing and people-watching." />
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-99.449" atv="27.979" onclick="skin_loadscene(scene_30April, get(skin_settings.loadscene_blend))" />
 
-		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle" ath="-101.819" atv="8.031" linkedscene="scene_nha-tho-duc-ba" tag="Discover now" />
-		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="-101.819" atv="8.031" linkedscene="scene_nha-sach" title="Notre-Dame Cathedral (Saigon)" content="Notre-Dame Cathedral (Saigon)" />
-		
-		<hotspot name="scene_nha-sach" style="hs_circle" ath="-165.264" atv="9.800" linkedscene="scene_nha-sach" tag="Discover now" />
-		<hotspot name="callout_nha-sach" style="callout" ath="-165.264" atv="9.800" linkedscene="scene_nha-sach" title="Ho Chi Minh City Book Street" content="Ho Chi Minh City Book Street – A cultural space for book lovers, where great works gather and readers connect with authors!" />
-
-		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-99.449" atv="27.979" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
-		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-165.922" atv="27.667" onclick="skin_loadscene(nha-sach, get(skin_settings.loadscene_blend))" />
+		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle" ath="-102.416" atv="0.476" linkedscene="scene_nha-tho-duc-ba" tag="Discover now" />
+		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="-102.416" atv="0.476" linkedscene="scene_nha-sach" title="Notre-Dame Cathedral (Saigon)" content="Notre-Dame Cathedral (Saigon)" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-165.922" atv="27.667" onclick="skin_loadscene(scene_nha-sach, get(skin_settings.loadscene_blend))" />
 	</scene>
 
+	<!-- Post station -->
+	<scene name="scene_PostStation1" title="PostStation1" onstart="" thumburl="panos/PostStation1.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.870" vlookatmax="33.870" />
+
+		<preview url="panos/PostStation1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PostStation1.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="scene_poststation2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-11.768" atv="20.866" onclick="skin_loadscene(scene_poststation2, get(skin_settings.loadscene_blend))" />
+		
+		<hotspot name="scene_nha-sach" style="hs_circle" ath="-104.501" atv="12.324" linkedscene="scene_nha-sach" tag="Discover now" />
+		<hotspot name="callout_nha-sach" style="callout" ath="-104.501" atv="12.324" linkedscene="scene_nha-sach" title="Ho Chi Minh City Book Street Gate 1" content="Ho Chi Minh City Book Street – A cultural space for book lovers, where great works gather and readers connect with authors!" />
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-102.646" atv="22.583" onclick="skin_loadscene(scene_nha-sach, get(skin_settings.loadscene_blend))" />
+
+		<hotspot name="scene_nha-tho-duc-ba" style="hs_circle" ath="134.262" atv="12.485" linkedscene="scene_nha-tho-duc-ba" tag="Discover now" />
+		<hotspot name="callout_nha-tho-duc-ba" style="callout" ath="134.262" atv="12.485" linkedscene="scene_nha-sach" title="Notre-Dame Cathedral (Saigon)" content="Notre-Dame Cathedral (Saigon)" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="135.393" atv="24.577" onclick="skin_loadscene(scene_nha-tho-duc-ba, get(skin_settings.loadscene_blend))" />
+	</scene>
+
+	<scene name="scene_PostStation2" title="PostStation2" onstart="" thumburl="panos/PostStation2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-34.228" vlookatmax="34.228" />
+
+		<preview url="panos/PostStation2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PostStation2.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="scene_poststation1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="5.208" atv="23.114" onclick="skin_loadscene(scene_PostStation1, get(skin_settings.loadscene_blend))" />
+		<hotspot name="scene_PostStation3" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-169.034" atv="10.457" onclick="skin_loadscene(scene_PostStation3, get(skin_settings.loadscene_blend))" />
+
+	</scene>
+
+	<scene name="scene_PostStation3" title="PostStation3" onstart="" thumburl="panos/PostStation3.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-25.553" vlookatmax="25.553" />
+
+		<preview url="panos/PostStation3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PostStation3.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="scene_poststation2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="160.612" atv="15.250" onclick="skin_loadscene(scene_poststation2, get(skin_settings.loadscene_blend))" />
+	</scene>
+
+	<scene name="scene_PostStation4" title="PostStation4" onstart="" thumburl="panos/PostStation4.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-27.071" vlookatmax="27.071" />
+
+		<preview url="panos/PostStation4.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/PostStation4.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<!-- pho di bo -->
+	<scene name="scene_pho-di-bo-NH-1" title="pho-di-bo-NH-1" onstart="" thumburl="panos/pho-di-bo-NH-1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.330" vlookatmax="32.330" />
+
+		<preview url="panos/pho-di-bo-NH-1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/pho-di-bo-NH-1.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="5.223" atv="12.772" onclick="skin_loadscene(scene_pho-di-bo-nh-4, get(skin_settings.loadscene_blend))" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-175.899" atv="14.427" onclick="skin_loadscene(scene_pho-di-bo-nh-2, get(skin_settings.loadscene_blend))" />
+	</scene>
+
+	<scene name="scene_pho-di-bo-NH-2" title="pho-di-bo-NH-2" onstart="" thumburl="panos/pho-di-bo-NH-2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.606" vlookatmax="32.606" />
+
+		<preview url="panos/pho-di-bo-NH-2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/pho-di-bo-NH-2.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-67.123" atv="13.552" onclick="skin_loadscene(scene_pho-di-bo-nh-4, get(skin_settings.loadscene_blend))" />
+	</scene>
+
+	<scene name="scene_pho-di-bo-NH-3" title="pho-di-bo-NH-3" onstart="" thumburl="panos/pho-di-bo-NH-3.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.415" vlookatmax="33.415" />
+
+		<preview url="panos/pho-di-bo-NH-3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/pho-di-bo-NH-3.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-147.023" atv="12.423" onclick="skin_loadscene(scene_pho-di-bo-nh-4, get(skin_settings.loadscene_blend))" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="31.263" atv="8.727" onclick="skin_loadscene(scene_nha-tho-duc-ba, get(skin_settings.loadscene_blend))" />
+	</scene>
+
+	<scene name="scene_pho-di-bo-NH-4" title="pho-di-bo-NH-4" onstart="" thumburl="panos/pho-di-bo-NH-4.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.996" vlookatmax="33.996" />
+
+		<preview url="panos/pho-di-bo-NH-4.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/pho-di-bo-NH-4.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="4.400" atv="23.628" onclick="skin_loadscene(scene_pho-di-bo-nh-3, get(skin_settings.loadscene_blend))" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-176.134" atv="23.223" onclick="skin_loadscene(scene_pho-di-bo-nh-2, get(skin_settings.loadscene_blend))" />
+	</scene>
 
 	<!-- Actions -->
 	<action name="show_info_popup">

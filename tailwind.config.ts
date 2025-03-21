@@ -16,7 +16,23 @@ const config: Config = {
         colors: {
           yellow: "#B2910E",
           red: "#A5190E"
-        }
+        },
+        animation: {
+          pulseGlow: "pulseGlow 1.5s infinite",
+          wiggle: "wiggle 1.5s infinite ease-in-out",
+        },
+        keyframes: {
+          pulseGlow: {
+            "0%, 100%": { opacity: "0.5", transform: "scale(1)" },
+            "50%": { opacity: "0.2", transform: "scale(1.2)" },
+          },
+          wiggle: {
+            "0%, 100%": { transform: "rotate(0deg)" },
+            "25%": { transform: "rotate(2deg)" },
+            "50%": { transform: "rotate(-2deg)" },
+            "75%": { transform: "rotate(2deg)" },
+          },
+        },
     },
   },
   plugins: [],
