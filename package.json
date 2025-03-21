@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@reduxjs/toolkit": "^2.6.0",
     "@t3-oss/env-nextjs": "^0.12.0",
     "@types/js-cookie": "^3.0.6",
@@ -17,6 +18,7 @@
     "framer-motion": "^12.4.7",
     "js-cookie": "^3.0.5",
     "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
     "lucide-react": "^0.477.0",
     "next": "14.1.0",
     "next-intl": "^3.5.3",
@@ -33,6 +35,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.16",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

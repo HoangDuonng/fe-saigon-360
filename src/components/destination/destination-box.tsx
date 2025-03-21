@@ -33,7 +33,21 @@ const destinations: { trending: Destination[]; new: Destination[] } = {
       image: '/assets/images/chobenthanh.png',
       link: '/panoramas/ben-thanh-market',
       trending: true,
-    }
+    },
+    // {
+    //   nameEn: 'Nguyen Hue Walking Street',
+    //   nameVi: 'Phố đi bộ Nguyễn Huệ',
+    //   image: '/assets/images/nguyen-hue-walk-street/pho-di-bo-nguyen-hue1.png',
+    //   link: '/panoramas/nguyen-hue-walk-street',
+    //   trending: true,
+    // },
+    // {
+    //   nameEn: 'Saigon Central Post Office',
+    //   nameVi: 'Bưu điện Trung tâm Sài Gòn',
+    //   image: '/assets/images/saigon-central-post-office/buu-dien-sai-gon1.png',
+    //   link: '/panoramas/saigon-central-post-office',
+    //   trending: true,
+    // }
   ],
   new: [
     {
@@ -44,10 +58,17 @@ const destinations: { trending: Destination[]; new: Destination[] } = {
       new: true,
     },
     {
-      nameEn: 'Ho Chi Minh Book Street',
-      nameVi: 'Đường sách Hồ Chí Minh',
-      image: '/assets/images/duongsach.png',
-      link: '/panoramas/book-street',
+      nameEn: 'Nguyen Hue Walking Street',
+      nameVi: 'Phố đi bộ Nguyễn Huệ',
+      image: '/assets/images/nguyen-hue-walk-street/pho-di-bo-nguyen-hue1.png',
+      link: '/panoramas/nguyen-hue-walk-street',
+      new: true,
+    },
+    {
+      nameEn: 'Saigon Central Post Office',
+      nameVi: 'Bưu điện Trung tâm Sài Gòn',
+      image: '/assets/images/saigon-central-post-office/buu-dien-sai-gon1.png',
+      link: '/panoramas/saigon-central-post-office',
       new: true,
     },
   ]

@@ -18,8 +18,7 @@
                design_thumbborder_bgroundedge="3"
                design_text_css="color:#FFFFFF; font-family:'Courier New', Courier, monospace; font-size:20px;"
                design_text_shadow="1"
-/>
-
+			/>
 
 	<!-- Điều chỉnh thiết kế của một số thành phần skin -->
 	<layer name="skin_layer">

@@ -227,15 +227,6 @@
 		<hotspot name="callout_cho-ben-thanh" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="7.437" atv="-7.362" onclick="open-lightboxlayer('%CURRENTXML%/3d-viewer.html', 'width:80%;height:80%;');" title="Ben Thanh Market" content="A bustling symbol of Saigon, Ben Thanh Market is a must-visit for local street food, souvenirs, and cultural experiences." />
 	</scene>
 
-
-	<scene name="scene_metro_cong_le_loi" title="Le Loi Metro Gate" onstart="" thumburl="panos/metro_cong_le_loi.tiles/thumb.jpg" lat="" lng="" heading="">
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.914" vlookatmax="32.914"/>
-		<preview url="panos/metro_cong_le_loi.tiles/preview.jpg"/>
-		<image>
-		<cube url="panos/metro_cong_le_loi.tiles/pano_%s.jpg"/>
-		</image>
-	</scene>
-
 	<!-- Actions -->
 	<action name="show_info_popup">
 		set(layer[info_popup].visible, true);

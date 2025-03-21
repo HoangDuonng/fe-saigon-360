@@ -10,6 +10,8 @@ import InfoSection from "@/components/banner/info-section";
 import Header from "@/components/header/header";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import DestinationIntroduce from "@/components/destination/destination-introduce";
+import DestinationBox from "@/components/destination/destination-box";
 
 type Destination = {
     id: string;
@@ -120,6 +122,11 @@ export default function DestinationById() {
                                     loading="lazy"
                                 />
                             </div>
+                        </div>
+
+                        <div className='bg-transparent'>
+                                <DestinationIntroduce />
+                                <DestinationBox />
                         </div>
                     </div>
                 </div>

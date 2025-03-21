@@ -1,0 +1,89 @@
+﻿<krpano version="1.19" title="Virtual Tour" license="FXsqTqaGNSZER5dSETEm+VzQEh9sWSa5DZMFsSmMxYV9GcXs8W3R8A/mWXrG
+			NUceXvrihmh28hfRF1ivrW0HMzEychPvNiD8B/4/ZzDaUE9Rh6Ig22aKJGDb
+			ja1/kYIqmc/VKfItRE2RTSOIbIroxOtsz626NIpxWksAAifwhpNwuPXqDQpz
+			2sRUMBzoPqZktpkItoSenN2mKd8Klfx7pOuB6CIK3e1CDXgyndqOt2mWybLZ
+			cU/wfJVAecfxk15ghiqrzaDsbqrdABDowg==">
+
+	<include url="../../plugins/callout.xml"/>
+	<include url="../../plugins/circle_hotspots.xml"/>
+	<style name="arrowspot" url="../../skin/vtourskin_hotspot.png" distorted="true" vr_timeout="1000" oy="0" scale="2" />
+	
+	<action name="goto">
+		mul(newdepth, depth, 2);
+		tween(depth, get(newdepth), 0.25);
+		tween(oy|alpha|rx, -400|0|45, 0.25, default, loadscene(%1, null, NOPREVIEW|MERGE|KEEPMOVING, BLEND(1)) );
+	</action>
+
+	<action name="do_crop_animation" scope="local" args="framewidth, frameheight, framerate">
+		<!-- define local variables -->
+		calc(local.xframes, (caller.imagewidth /framewidth) BOR 0);
+		calc(local.frames, xframes * ((caller.imageheight / frameheight) BOR 0));
+		def(local.frame, integer, 0);
+		
+		<!-- set the first frame -->
+		calc(caller.crop, '0|0|' + framewidth + '|' + frameheight);
+		
+		<!-- do the animation -->
+		setinterval(calc('crop_anim_' + caller.name), calc(1.0 / framerate),
+			if(caller.loaded,
+				inc(frame);
+				if(frame GE frames, if(caller.onlastframe !== null, callwith(caller, onlastframe() ) ); set(frame,0); );
+				mod(xpos, frame, xframes);
+				div(ypos, frame, xframes);
+				Math.floor(ypos);
+				mul(xpos, framewidth);
+				mul(ypos, frameheight);
+				calc(caller.crop, xpos + '|' + ypos + '|' + framewidth + '|' + frameheight);
+			  ,
+				<!-- stop the interval when the hotspot gets removed -->
+				clearinterval(calc('crop_anim_' + caller.name));
+			);
+		);
+	</action>
+
+
+	<scene name="scene_walkstreet1" title="walkstreet1" onstart="" thumburl="walkstreet1/thumb.jpg">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.330" vlookatmax="32.330" />
+		<preview url="walkstreet1/preview.jpg" />
+
+		<image>
+			<cube url="walkstreet1/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="5.223" atv="12.772" onclick="goto(scene_walkstreet4)" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-175.899" atv="14.427" onclick="goto(scene_walkstreet2)" />
+	</scene>
+
+
+	<scene name="scene_walkstreet2" title="walkstreet2" onstart="" thumburl="walkstreet2/thumb.jpg">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.606" vlookatmax="32.606" />
+		<preview url="walkstreet2/preview.jpg" />
+
+		<image prealign="0|90|0">
+			<cube url="walkstreet2/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="20.123" atv="13.552" onclick="goto(scene_walkstreet1);" />
+	</scene>
+
+
+	<scene name="scene_walkstreet3" title="walkstreet3" onstart="" thumburl="walkstreet3/thumb.jpg">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.415" vlookatmax="33.415" />
+		<preview url="walkstreet3/preview.jpg" />
+
+		<image prealign="0|180|0">
+			<cube url="walkstreet3/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-147.023" atv="12.423" onclick="goto(scene_walkstreet4)" />
+	</scene>
+	
+	<scene name="scene_walkstreet4" title="walkstreet4" onstart="" thumburl="walkstreet4/thumb.jpg">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.996" vlookatmax="33.996" />
+		<preview url="walkstreet4/preview.jpg" />
+
+		<image prealign="0|180|0">
+			<cube url="walkstreet4/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="4.400" atv="23.628" onclick="goto(scene_walkstreet1)" />
+		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-176.134" atv="23.223" onclick="goto(scene_walkstreet3)" />
+	</scene>
+
+</krpano>
