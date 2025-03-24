@@ -13,7 +13,7 @@ export default function Home() {
     <div>
       <HomeBanner />
       <AdsBanner />
-      <div className='px-20 bg-transparent'>
+      <div className='px-5 md:px-20 bg-transparent'>
         <DestinationIntroduce />
         <DestinationBox />
       </div>

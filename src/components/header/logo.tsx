@@ -1,15 +1,13 @@
-import Image from "next/image";
-import Images from "../shared"; 
+"use client"
+import Link from "next/link";
 
 export default function Logo() {
     return (
-        <div>
-            <Image
-                src={Images.logo}
-                width={150}
-                height={150} 
-                alt={"logo"}           
-            />
+        <div className="flex items-center py-2 space-x-1 cursor-pointer md:mr-0">
+            <div className="flex justify-center space-x-1">
+                <span className="text-xl md:text-xl font-bold text-red">SAIGON</span>
+                <span className="text-xl md:text-xl font-bold text-white">360</span>
+            </div>
         </div>
-    )
+    );
 }

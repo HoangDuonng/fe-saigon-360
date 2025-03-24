@@ -3,15 +3,13 @@ import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
 import axiosFe from "@/helpers/call-fe";
-import { env } from '@/env.mjs';
 import DestinationBanner from "@/components/banner/destination-banner";
+import DestinationIntroduce from '@/components/destination/destination-introduce';
 import InfoCard from "@/components/banner/info-card";
 import InfoSection from "@/components/banner/info-section";
 import Header from "@/components/header/header";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
-import DestinationIntroduce from "@/components/destination/destination-introduce";
-import DestinationBox from "@/components/destination/destination-box";
 
 type Destination = {
     id: string;
@@ -46,7 +44,7 @@ export default function DestinationById() {
                     open_time: res.data.open_time || "N/A",
                     title: res.data[`title_${locale}`] || "N/A",
                     description: res.data[`description_${locale}`] || "N/A",
-                    content: res.data[`content_${locale}`] || "N/A",
+                    content: res.data[`content_${locale}`] || "N/A", // NEW: Get Vietnamese content
                     image_banner: res.data.image_banner ? res.data.image_banner.split(",") : [],
                     image_content: res.data.image_content ? res.data.image_content.split(",") : [],
                 });
@@ -81,25 +79,28 @@ export default function DestinationById() {
         }
     };
 
-``
     return (
         <div>
             {destination ? (
                 <div>
                     <Header />
                     <DestinationBanner
-                        images={destination.image_content.map(image => `${env.NEXT_PUBLIC_IMAGE}/${id}/${image}.png`)}
+                        images={destination.image_banner.map(image => `/api/destination/image/banner/${image}`)}
                         text={destination.name}
                         address={destination.address}
                     />
 
-                    <div className="mx-40">
+                    <div className="mx-6 md:mx-40">
                         <InfoCard
                             title={destination.name}
                             description={destination.description}
                             duration={destination.open_time}
-                            imageUrl={`/assets/images/${id}/about/${destination.image_banner[0]}.png`}
-                            gallery={destination.image_banner.map(image => `/assets/images/${id}/about/${image}.png`)}
+                            imageUrl={
+                                destination.image_banner.length > 0 
+                                    ? `/api/destination/image/banner/${destination.image_banner[0]}` 
+                                    : '/path/to/default-image.png'
+                            }
+                            gallery={destination.image_banner.map(image => `/api/destination/image/banner/${image}`)}
                             reviewCount={destination.image_content.length}
                         />
 
@@ -108,7 +109,7 @@ export default function DestinationById() {
                             openTime={destination.open_time}
                             subtitle={destination.title}
                             content={destination.content} 
-                            images={destination.image_content.length > 0 ? destination.image_content.map(image => `/assets/images/${id}/${image}.png`) : []}
+                            images={destination.image_content.map(image => `/api/destination/image/content/${image}`)}
                             id={destination.id}
                         />
 
@@ -123,11 +124,11 @@ export default function DestinationById() {
                                 />
                             </div>
                         </div>
-
-                        <div className='bg-transparent'>
-                                <DestinationIntroduce />
-                                <DestinationBox />
-                        </div>
+                        <h2 className="text-xl md:text-2xl font-roboto font-bold text-black pb-1 flex items-center gap-2 mt-10">
+                            {locale === "en" ? "Nearby Attractions" : "Địa điểm gần đây hấp dẫn"}
+                        </h2>
+                        <DestinationIntroduce />
+                        
                     </div>
                 </div>
             ) : (
