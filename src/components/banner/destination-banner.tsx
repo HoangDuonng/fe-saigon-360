@@ -36,11 +36,11 @@ export default function DestinationBanner({ images, text, address, interval = 30
         .catch((error) => console.error("❌ Error checking favorite status:", error));
     }
   }, [user?.id, id]);
-  
+
 
   const handleFavoriteToggle = async () => {
     if (!user?.id || !id) return;
-  
+
     try {
       if (isFavorite) {
         await axiosFe.delete(`/api/favorites/${user.id}/${id}`);
@@ -52,7 +52,7 @@ export default function DestinationBanner({ images, text, address, interval = 30
       console.error("Error toggling favorite:", error);
     }
   };
-  
+
   return (
     <div className="relative w-full h-[400px] md:h-[740px] cursor-pointer overflow-hidden select-none">
       {/* Ảnh Panorama */}
@@ -67,12 +67,24 @@ export default function DestinationBanner({ images, text, address, interval = 30
       {/* Overlay Text + Address */}
       <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center px-4">
         <span className="text-white text-xl md:text-4xl font-bold">{text || "Ouvrir la visite virtuelle"}</span>
-        {address && <span className="text-white text-sm md:text-base font-light mt-2">{address}</span>}
+
+        {/* Thêm link Google Maps */}
+        {address && (
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-sm md:text-base font-light mt-2 underline hover:text-yellow-400 transition-all"
+          >
+            {address}
+          </a>
+        )}
+
         <button
           onClick={handleFavoriteToggle}
           className={`flex items-center justify-center gap-2 mt-2 px-4 py-2 rounded-xl transition-all duration-300
-            ${isFavorite ? "bg-yellow text-white opacity-90" : "bg-red-500 hover:bg-yellow text-white"}
-          `}
+      ${isFavorite ? "bg-yellow text-white opacity-90" : "bg-red-500 hover:bg-yellow text-white"}
+    `}
           disabled={loading}
         >
           {loading ? (
@@ -85,6 +97,7 @@ export default function DestinationBanner({ images, text, address, interval = 30
           </span>
         </button>
       </div>
+
     </div>
   );
 }

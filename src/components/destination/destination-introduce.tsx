@@ -49,7 +49,7 @@ const destinations: { trending: Destination[] } = {
       nameVi: 'Tuyến Metro Bến Thành - Suối Tiên',
       descriptionEn: "The Ben Thanh - Suoi Tien Metro Line is the first urban railway line in Ho Chi Minh City, marking a significant milestone in the citys transportation infrastructure. Designed to ease traffic congestion and provide a modern, efficient public transit system, this metro line connects the bustling downtown area with the rapidly developing eastern districts. Stretching over multiple stations, the metro line enhances connectivity between key commercial, educational, and residential areas, making daily commutes faster and more convenient. With advanced technology and a commitment to sustainability, it aims to revolutionize urban mobility and encourage a shift towards public transportation. Beyond its role as a transit system, the Ben Thanh - Suoi Tien Metro Line represents Ho Chi Minh Citys progress toward becoming a more dynamic and future-ready metropolis. It is a symbol of modernization, promising improved urban living and economic growth for the city and its residents.",
       descriptionVi: "Tuyến Metro Bến Thành - Suối Tiên là tuyến đường sắt đô thị đầu tiên tại Thành phố Hồ Chí Minh, đánh dấu một cột mốc quan trọng trong hệ thống giao thông của thành phố. Được thiết kế nhằm giảm ùn tắc giao thông và cung cấp một hệ thống vận tải công cộng hiện đại, hiệu quả, tuyến metro này kết nối khu trung tâm sầm uất với các quận phía Đông đang phát triển nhanh chóng. Trải dài qua nhiều ga, tuyến metro giúp tăng cường kết nối giữa các khu vực thương mại, giáo dục và dân cư, giúp việc đi lại hàng ngày trở nên nhanh chóng và thuận tiện hơn. Với công nghệ tiên tiến và cam kết phát triển bền vững, tuyến metro này hướng đến việc cách mạng hóa giao thông đô thị và khuyến khích người dân sử dụng phương tiện công cộng. Không chỉ là một hệ thống giao thông, tuyến Metro Bến Thành - Suối Tiên còn thể hiện bước tiến của Thành phố Hồ Chí Minh trên con đường trở thành một đô thị năng động và hiện đại. Đây là biểu tượng của sự đổi mới, hứa hẹn nâng cao chất lượng sống đô thị và thúc đẩy tăng trưởng kinh tế cho thành phố và cư dân.",
-      image: '/assets/images/metro-ben-thanh-suoi-tien/metro-ben-thanh-suoi-tien1.png',
+      image: '/assets/images/metro-ben-thanh-suoi-tien-about1.png',
       link: '/destinations/metro-ben-thanh-suoi-tien',
       trending: true,
     },
@@ -58,7 +58,7 @@ const destinations: { trending: Destination[] } = {
       nameVi: 'Phố đi bộ Nguyễn Huệ',
       descriptionEn: "Nguyen Hue Walking Street is a famous public space located in the heart of Ho Chi Minh City. It is a favorite destination for locals and tourists, where they can stroll, shop, dine and participate in entertainment activities. With a length of about 670 meters and a width of 64 meters, Nguyen Hue Walking Street is one of the largest walking streets in Vietnam. The street is decorated with many green trees, flowers and a modern lighting system, creating a beautiful and airy space. On weekends, Nguyen Hue Walking Street becomes especially lively with art performances, street music and cultural events. It is also an ideal destination to admire the citys famous architectural works, such as the City Hall, Rex Hotel and Vincom Center Shopping Mall.",
       descriptionVi: "Phố đi bộ Nguyễn Huệ là một không gian công cộng nổi tiếng nằm ngay trung tâm Thành phố Hồ Chí Minh. Đây là một điểm đến yêu thích của người dân địa phương và du khách, nơi họ có thể đi dạo, mua sắm, ăn uống và tham gia vào các hoạt động giải trí. Với chiều dài khoảng 670 mét và chiều rộng 64 mét, phố đi bộ Nguyễn Huệ là một trong những phố đi bộ lớn nhất Việt Nam. Phố được trang trí với nhiều cây xanh, hoa và hệ thống chiếu sáng hiện đại, tạo nên một không gian đẹp và thoáng đãng. Vào cuối tuần, phố đi bộ Nguyễn Huệ trở nên đặc biệt sôi động với các hoạt động biểu diễn nghệ thuật, âm nhạc đường phố và các sự kiện văn hóa. Nơi đây cũng là một điểm đến lý tưởng để ngắm nhìn các công trình kiến trúc nổi tiếng của thành phố, như Tòa nhà Ủy ban Nhân dân Thành phố, Khách sạn Rex và Trung tâm Thương mại Vincom Center.",
-      image: '/assets/images/nguyen-hue-walk-street/pho-di-bo-nguyen-hue1.png', // Thay thế bằng đường dẫn hình ảnh phù hợp
+      image: '/assets/images/pho-di-bo-nguyen-hue-about2.png', // Thay thế bằng đường dẫn hình ảnh phù hợp
       link: '/destinations/nguyen-hue-walk-street',
       trending: true,
     },
@@ -67,7 +67,7 @@ const destinations: { trending: Destination[] } = {
       nameVi: 'Bưu điện Trung tâm Sài Gòn',
       descriptionEn: "Saigon Central Post Office is one of the typical architectural works of Ho Chi Minh City, bearing the strong imprint of ancient French architecture. Built in the late 19th century, the post office is not only a place providing postal services but also an attractive tourist destination, attracting tourists with its unique architectural beauty and long history. With its high arched architecture, large windows and exquisite decorative motifs, Saigon Central Post Office gives visitors the feeling of being lost in an ancient European space. Inside the post office, visitors can admire large murals, solid stone columns and meticulously carved wooden desks. Not only is it a beautiful architectural work, Saigon Central Post Office is also a historical witness of the city. This place has witnessed many important events of Saigon, from the French colonial period to the years of war and peace.",
       descriptionVi: "Bưu điện Trung tâm Sài Gòn là một trong những công trình kiến trúc tiêu biểu của Thành phố Hồ Chí Minh, mang đậm dấu ấn kiến trúc Pháp cổ. Được xây dựng vào cuối thế kỷ 19, bưu điện không chỉ là một địa điểm cung cấp dịch vụ bưu chính mà còn là một điểm đến du lịch hấp dẫn, thu hút du khách bởi vẻ đẹp kiến trúc độc đáo và lịch sử lâu đời. Với kiến trúc mái vòm cao, những ô cửa sổ lớn và những họa tiết trang trí tinh xảo, Bưu điện Trung tâm Sài Gòn mang đến cho du khách cảm giác như đang lạc vào một không gian châu Âu cổ kính. Bên trong bưu điện, du khách có thể chiêm ngưỡng những bức tranh tường lớn, những chiếc cột đá vững chãi và những chiếc bàn làm việc bằng gỗ được chạm khắc tỉ mỉ. Không chỉ là một công trình kiến trúc đẹp, Bưu điện Trung tâm Sài Gòn còn là một chứng nhân lịch sử của thành phố. Nơi đây đã chứng kiến nhiều sự kiện quan trọng của Sài Gòn, từ thời kỳ Pháp thuộc đến những năm tháng chiến tranh và hòa bình.",
-      image: '/assets/images/saigon-central-post-office/buu-dien-sai-gon1.png', // Thay thế bằng đường dẫn hình ảnh phù hợp
+      image: '/assets/images/buu-dien-sai-gon-about1.png', 
       link: '/destinations/saigon-central-post-office',
       trending: true,
     },
@@ -79,42 +79,42 @@ interface DestinationCardProps {
 }
 
 const DestinationCard = ({ destination, locale }: DestinationCardProps) => (
-    <div className="flex overflow-hidden transition-transform duration-700 bg-white group">
-      {/* Hình ảnh (nửa trái) */}
-      <div className="w-1/2 relative">
-        <Image
-          src={destination.image}
-          alt={destination.nameEn}
-          width={400}
-          height={300}
-          className="w-full h-[400px] object-cover group-hover:brightness-75 transition-all duration-700"
-        />
-      </div>
-  
-      {/* Nội dung (nửa phải) */}
-      <div className="w-1/2 p-6 flex flex-col justify-between">
-        <h3 className="text-black text-2xl font-semibold group-hover:text-yellow-500 transition-all duration-500">
-          {locale === 'en' ? destination.nameEn : destination.nameVi}
-        </h3>
-  
-        {/* Mô tả */}
-        {destination.descriptionEn && (
-          <p className="text-gray-600 mt-2 text-sm">
-            {locale === 'en' ? destination.descriptionEn : destination.descriptionVi}
-          </p>
-        )}
-  
-        {/* Nút "Xem chi tiết" */}
-        <Link
-          href={`/${locale}/${destination.link}`}
-          className="text-black font-light mt-4 w-max px-4 py-2 text-sm font-medium text-yellow-600 border-2 border-yellow-600 rounded-lg hover:bg-yellow-600 hover:text-yellow transition-all duration-500"
-        >
-          {locale === 'en' ? 'See details' : 'Xem chi tiết'}
-        </Link>
-      </div>
+  <div className="flex flex-col md:flex-row overflow-hidden transition-transform duration-700 bg-white group">
+    {/* Hình ảnh */}
+    <div className="relative md:w-1/2 w-full">
+      <Image
+        src={destination.image}
+        alt={destination.nameEn}
+        width={400}
+        height={300}
+        className="w-full h-48 md:h-[400px] object-cover group-hover:brightness-75 transition-all duration-700"
+      />
     </div>
-  );
-  
+
+    {/* Nội dung */}
+    <div className="w-full md:w-1/2 p-4 md:p-6 flex flex-col justify-between">
+      <h3 className="text-black text-xl md:text-xl font-semibold group-hover:text-yellow-500 transition-all duration-500">
+        {locale === 'en' ? destination.nameEn : destination.nameVi}
+      </h3>
+
+      {/* Mô tả */}
+      {destination.descriptionEn && (
+        <p className="text-gray-600 mt-2 text-sm md:text-base">
+          {locale === 'en' ? destination.descriptionEn : destination.descriptionVi}
+        </p>
+      )}
+
+      {/* Nút "Xem chi tiết" */}
+      <Link
+        href={`/${locale}/${destination.link}`}
+        className="text-black text-center mt-4 w-max px-4 py-2 text-sm font-medium text-yellow-600 border-2 border-yellow-600 rounded-lg hover:text-yellow transition-all duration-500"
+      >
+        {locale === 'en' ? 'See details' : 'Xem chi tiết'}
+      </Link>
+    </div>
+  </div>
+);
+
 
   export default function TrendingDestinations() {
     const locale = useLocale();

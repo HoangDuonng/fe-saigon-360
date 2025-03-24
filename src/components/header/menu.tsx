@@ -7,10 +7,13 @@ import { clearUser } from "@/redux/slices/authSlice";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import LocalSwitcher from "../local-switcher";
 import { useEffect, useState } from "react";
-import SubMenu from "./sub-menu";
 import LoginButton from "./login-button";
 import axiosFe from "@/helpers/call-fe";
 import { useDispatch } from "react-redux";
+import { IoMenuSharp } from "react-icons/io5";
+import ResponsiveMenu from "./responsive-menu";
+import Logo from "./logo";
+import SubMenu from "./sub-menu";
 
 interface SubFunction {
   name: string;
@@ -31,33 +34,38 @@ export default function Menu() {
   const router = useRouter();
   const [menu, setMenu] = useState<MenuItem[]>([]);
   const [activeItem, setActiveItem] = useState<MenuItem | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   const handleLogout = async () => {
     const accessToken = Cookies.get('access_token'); // Lấy access token từ cookies
     // Gọi API logout và truyền access_token qua header
     try {
-        const response = await axiosFe.post(
-            `/logout`,
-            {},
-            {
-                headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                },
-            }
-        );
-        if (response.status === 200) {
-            dispatch(clearUser());
-            Cookies.remove('refresh_token');
-            Cookies.remove('access_token');
-            Cookies.remove('sessionId');
-            //WebSocketService.disconnect();
-            router.push('/');
-        } else {
+      const response = await axiosFe.post(
+        `/logout`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
         }
+      );
+      if (response.status === 200) {
+        dispatch(clearUser());
+        Cookies.remove('refresh_token');
+        Cookies.remove('access_token');
+        Cookies.remove('sessionId');
+        //WebSocketService.disconnect();
+        router.push('/');
+      } else {
+      }
     } catch (error) {
-        console.error('Error during logout:', error);
+      console.error('Error during logout:', error);
     }
-};
+  };
   useEffect(() => {
     fetch(`/api/menu/${locale}`)
       .then((res) => res.json())
@@ -72,18 +80,17 @@ export default function Menu() {
   };
 
   return (
-    // <header className="p-5 bg-black bg-opacity-50">
-    <header className="fixed top-0 left-0 w-full z-50 p-5 bg-[#C4A300] bg-opacity-60 backdrop-blur-sm text-white">
-      <nav className="flex items-center justify-between relative">
-        <Link href={`/${locale}/`}>
-          <div className="flex flex-col sm:flex-row justify-center sm:space-x-2 ml-1">
-            <span className="text-sm md:text-xl font-bold text-red">SAIGON</span>
-            <span className="text-sm md:text-xl font-bold text-white">360</span>
-          </div>
-        </Link>
+    <header className="fixed flex top-0 left-0 w-full z-50 p-5 bg-[#C4A300] bg-opacity-60 backdrop-blur-sm text-white">
+      <nav className="flex items-center justify-between w-full">
+        {/* Logo */}
+        <div className="mr-28">
+          <Link href={`/${locale}/`}>
+            <Logo />
+          </Link>
+        </div>
 
-        <div className="flex space-x-20 text-base relative">
-          {/* Trang chủ */}
+        {/* Menu điều hướng chính */}
+        <div className="hidden md:flex space-x-20">
           <Link href={`/${locale}/`}>
             <button className="px-1 py-1 block font-light text-white text-sm transition hover:text-red">
               {locale === "en" ? "Homepage" : "Trang chủ"}
@@ -96,7 +103,6 @@ export default function Menu() {
             </button>
           </Link>
 
-          {/* Các menu khác */}
           {menu.map(
             (item) =>
               item.active && (
@@ -108,24 +114,38 @@ export default function Menu() {
                   <button className="px-1 py-1 block font-light text-white text-sm transition hover:text-red">
                     {locale === "en" ? item.nameEn : item.nameVi}
                   </button>
-                  {activeItem?.id === item.id ? <IoIosArrowUp className="w-3 h-3 text-white" /> : <IoIosArrowDown className="w-3 h-3 text-white" />}
+                  {activeItem?.id === item.id ? (
+                    <IoIosArrowUp className="w-3 h-3 text-white" />
+                  ) : (
+                    <IoIosArrowDown className="w-3 h-3 text-white" />
+                  )}
                 </div>
               )
           )}
+
           <Link href={`/${locale}/vtour-travel`}>
             <button className="px-1 py-1 block font-light text-white text-sm transition hover:text-red">
               {locale === "en" ? "Virtual Tour" : "Tham quan thực tế ảo"}
             </button>
-        </Link>
+          </Link>
+          <LocalSwitcher />
         </div>
+
+        {/* LocalSwitcher và LoginButton */}
+        <div className="hidden md:flex items-center space-x-12 ml-auto">
+          <LoginButton />
+        </div>
+
+        {/* Responsive Menu */}
+        <IoMenuSharp
+          className="block ml-auto mr-1 w-8 h-8 md:hidden"
+          onClick={toggleMenu}
+        />
+        {/* SubMenu chỉ hiển thị nếu có subFunctions */}
+        {activeItem?.subFunctions && <SubMenu subFunctions={activeItem.subFunctions} locale={locale} />}
         
-
-        <LocalSwitcher />
-        <LoginButton />
+        {isMenuOpen && <ResponsiveMenu setMenuResponsive={setIsMenuOpen} />}
       </nav>
-
-      {/* SubMenu chỉ hiển thị nếu có subFunctions */}
-      {activeItem?.subFunctions && <SubMenu subFunctions={activeItem.subFunctions} locale={locale} />}
     </header>
   );
 }
