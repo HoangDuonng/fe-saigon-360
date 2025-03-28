@@ -140,6 +140,7 @@ import Header from "@/components/header/header";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { Button } from "@/components/ui/button";
+import GoogleMap from "@/components/maps/GoogleMap";
 
 type Destination = {
     id: string;
@@ -255,6 +256,11 @@ export default function DestinationById() {
                                 />
                             </div>
                         </div>
+                        {/* <div className="md:pt-24">
+                            <div className="w-full md:h-auto">
+                                <GoogleMap />
+                            </div>
+                        </div> */}
                     </div>
                 </div>
             ) : (
