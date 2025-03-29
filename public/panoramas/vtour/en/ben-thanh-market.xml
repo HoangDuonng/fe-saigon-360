@@ -58,11 +58,10 @@
 		url="skin/logo_2.png" 
 		keep="true" 
 		scale="0.5" 
-		x="+20" y="-30" 
+		x="+0" y="-70" 
 		align="topleft" 
 		enabled="true" 
 		alpha="0"
-		onclick="openurl(https://www.tlu.edu.vn/)"
 	/>
 
 	<style name="infospot"

@@ -53,11 +53,10 @@
 		url="skin/logo_2.png" 
 		keep="true" 
 		scale="0.5" 
-		x="+20" y="-30" 
+		x="+0" y="-70" 
 		align="topleft" 
 		enabled="true" 
 		alpha="0"
-		onclick="openurl(https://www.tlu.edu.vn/)"
 	/>
 
 	<style name="infospot"
@@ -121,7 +120,7 @@
 
     <!-- Hình ảnh trong popup -->
    <layer name="info_image"
-       url="skin/nha-tho-duc-ba.jpg"
+       url="skin/pho-di-bo.jpg"
        align="top"
        width="100%"
        height="60%"
@@ -133,8 +132,8 @@
     align="bottom"
     width="100%"
     height="40%"
-    html="The Notre-Dame Cathedral Basilica of Saigon (officially the Immaculate Conception Cathedral Basilica, French: Cathédrale Notre-Dame de Saïgon) is the cathedral of the Archdiocese of Saigon. Commonly known as Notre-Dame Cathedral, it is not only a symbol of Catholicism in Vietnam but also one of Ho Chi Minh City's most iconic architectural landmarks and a popular tourist attraction. Originally named Saigon Church (French: l'église de Saïgon), it was renamed Notre-Dame Cathedral in 1959 following the installation of the Statue of Our Lady of Peace in front of its courtyard. The cathedral has hosted numerous episcopal ordinations, welcomed papal representatives, and served as the venue for the installation of archbishops and the ordination of thousands of priests."
-    scrolling="auto"
+    html="Nguyen Hue Street is a road in District 1, the center of Ho Chi Minh City, running from the headquarters of the Ho Chi Minh City People's Committee to Bach Dang Wharf on the Saigon River. Currently, the center of this street features a 27-meter-wide pedestrian square, which was put into use in 2015 as the first pedestrian square in Vietnam. Nguyen Hue Street begins at Le Thanh Ton Street, directly opposite the headquarters of the Ho Chi Minh City People's Committee. It intersects Le Loi, Nguyen Thiep, Ton That Thiep, Mac Thi Buoi, Huynh Thuc Khang, Ngo Duc Ke, Hai Trieu Streets, and ends at Ton Duc Thang Street, facing Bach Dang Park."
+	scrolling="auto"
     css="color:#000000; font-size:18px; text-align:justify; overflow:auto; padding:20px;
 			background-color: rgba(255, 255, 255, 0.9); margin: 0 auto;
 			border-radius: 15px; 
@@ -205,7 +204,7 @@
 	<include url="skin/vtourskin_design.xml" />
 
 	<!-- pho di bo -->
-	<scene name="scene_pho-di-bo-NH-3" title="pho-di-bo-NH-3" onstart="" thumburl="panos/pho-di-bo-NH-3.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_pho-di-bo-NH-3" title="Nguyen Hue walking street" onstart="" thumburl="panos/pho-di-bo-NH-3.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.415" vlookatmax="33.415" />
 
@@ -217,7 +216,7 @@
 		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-147.023" atv="12.423" onclick="skin_loadscene(scene_pho-di-bo-nh-4, get(skin_settings.loadscene_blend))" />
 	</scene>
 
-	<scene name="scene_pho-di-bo-NH-1" title="pho-di-bo-NH-1" onstart="" thumburl="panos/pho-di-bo-NH-1.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_pho-di-bo-NH-1" title="Nguyen Hue walking street" onstart="" thumburl="panos/pho-di-bo-NH-1.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.330" vlookatmax="32.330" />
 
@@ -230,7 +229,7 @@
 		<hotspot name="spot2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-175.899" atv="14.427" onclick="skin_loadscene(scene_pho-di-bo-nh-2, get(skin_settings.loadscene_blend))" />
 	</scene>
 
-	<scene name="scene_pho-di-bo-NH-2" title="pho-di-bo-NH-2" onstart="" thumburl="panos/pho-di-bo-NH-2.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_pho-di-bo-NH-2" title="Nguyen Hue walking street" onstart="" thumburl="panos/pho-di-bo-NH-2.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.606" vlookatmax="32.606" />
 
@@ -244,7 +243,7 @@
 
 	
 
-	<scene name="scene_pho-di-bo-NH-4" title="pho-di-bo-NH-4" onstart="" thumburl="panos/pho-di-bo-NH-4.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_pho-di-bo-NH-4" title="Nguyen Hue walking street" onstart="" thumburl="panos/pho-di-bo-NH-4.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.996" vlookatmax="33.996" />
 

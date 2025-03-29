@@ -36,19 +36,19 @@
       justify-content: flex-start;
       background: #ffffff;
       overflow-y: auto;
-      border-left: 5px solid #1d4ed8;
+      border-left: 5px solid #B2910E;
     }
 
     .description h3 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin-bottom: 20px;
-      color: #1d4ed8;
+      color: #B2910E;
       text-align: center;
       text-transform: uppercase;
     }
 
     .description p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.8;
       color: #4b5563;
       margin-bottom: 20px;
@@ -92,7 +92,7 @@
     .read-more-btn {
       align-self: center;
       padding: 10px 20px;
-      background: #1d4ed8;
+      background: #B2910E;
       color: white;
       border: none;
       border-radius: 8px;
@@ -104,7 +104,7 @@
     }
 
     .read-more-btn:hover {
-      background: #2563eb;
+      background: #B2910E;
     }
 
     .audio-player-container {
@@ -157,15 +157,19 @@
 </head>
 <body>
 <div class="content-container">
-  <model-viewer
-    src="./nha-tho-duc-ba.glb"
-    alt="3D Model of Notre-Dame Cathedral"
-    camera-controls
+  <model-viewer 
+    src="./nha-tho-duc-ba.glb" 
+    alt="Mô hình 3D Nhà thờ Đức Bà"
+    camera-controls 
     auto-rotate
     touch-action="pan-y"
     tone-mapping="aces"
     shadow-intensity="1"
-    camera-orbit="90deg 90deg 8m">
+    camera-orbit="90deg 90deg 5m"
+    min-camera-orbit="auto 90deg auto"
+    max-camera-orbit="auto 90deg auto"
+    style="background-image: url('./saigon-notre-dame-cathedral-about4-modified.png'); background-size: cover; background-position: center;"
+  >
   </model-viewer>
 
   <div class="description">
