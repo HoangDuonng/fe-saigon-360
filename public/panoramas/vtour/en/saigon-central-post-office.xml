@@ -3,6 +3,23 @@
 	<include url="skin/vtourskin.xml" />
 	<include url="plugins/callout.xml"/>
 	<include url="plugins/circle_hotspots.xml"/>
+	<include url="plugins/pop-up.xml"/>
+	<plugin name="easy_html_lightbox" url="plugins/easy_html_lightbox.js" keep="true" devices="html5" include_jquery="true" include_lightbox="true" theme="light" background_color="#1e1e1e"/>
+
+	<!--  LAYER für Lightbox  -->
+	<layer name="lightbox-overlay" parent="" type="container" style="style-lightbox-overlay" align="center" edge="" keep="true" enabled="true" visible="false" bgcapture="true" alpha="1" scale="1" zorder="999"/>
+	<style name="style-lightbox-overlay" x="0" y="0" width="100%" height="100%" vcenter="true" padding="0" bg="true" bgcolor="0x000000" bgalpha="0.5" bgborder="0 0xFFFFFF 1.0" bgroundedge="0" bgshadow="" onclick="set(layer[lightbox-overlay].visible, false); tween(layer[lightbox-layer].scale, 0);"/>
+	<layer name="lightbox-layer" parent="lightbox-overlay" type="container" style="style-lightbox-layer" align="center" edge="" keep="true" enabled="true" visible="true" bgcapture="true" alpha="1" scale="0"/>
+	<style name="style-lightbox-layer" x="0" y="0" width="80%" height="70%" vcenter="true" padding="0" bg="true" bgcolor="0xFFFFFF" bgalpha="0.5" bgborder="1 0xFFFFFF 1.0" bgroundedge="0" bgshadow=""/>
+
+	<!--  LAYER für Schließen-Button  -->
+	<layer name="close-lightbox-layer" parent="lightbox-layer" style="close-lightbox-layer-style"/>
+	<style name="close-lightbox-layer-style" type="container" url="%FIRSTXML%/logos/x-button-weiss.png" bgcapture="false" align="topright" keep="true" enabled="true" visible="true" width="25" height="25" x="-25" y="-25" scale="1" zorder="501" onhover="showtext(Schließen);" onclick="set(layer[lightbox-overlay].visible, false); tween(layer[lightbox-layer].scale, 0);"/>
+	<action name="open-lightboxlayer">     autorotate.stop();     set(layer[lightbox-overlay].visible, true);     tween(layer[lightbox-layer].scale, 1);     plugin[easy_html_lightbox].open_url('%1','','','','','layer[lightbox-layer]'); </action>
+	<action 
+		name="close-lightboxlayer"> set(layer[lightbox-overlay].visible, false); tween(layer[lightbox-layer].scale, 0); pauseallsounds(); 
+	</action>
+
 
 	<callout 
 		key="FXsqTqaGNSZER5dSETEm+VzQEh9sWSa5DZMFsSmMxYV9GcXs8W3R8A/mWXrG
@@ -37,11 +54,10 @@
 		url="skin/logo_2.png" 
 		keep="true" 
 		scale="0.5" 
-		x="+20" y="-30" 
+		x="+0" y="-70" 
 		align="topleft" 
 		enabled="true" 
 		alpha="0"
-		onclick="openurl(https://www.tlu.edu.vn/)"
 	/>
 
 	<style name="infospot"
@@ -105,7 +121,7 @@
 
     <!-- Hình ảnh trong popup -->
    <layer name="info_image"
-       url="skin/metro.jpg"
+       url="skin/buu-dien-thanh-pho.jpg"
        align="top"
        width="100%"
        height="60%"
@@ -117,8 +133,8 @@
         align="bottom"
         width="100%"
         height="40%"
-        html="Ben Thanh Metro Station is a key transportation hub in Ho Chi Minh City's urban transit system. As the central interchange for multiple metro lines, it plays a crucial role in enhancing connectivity and easing traffic congestion in the city. Located near the historic Ben Thanh Market, the station offers convenient access to major landmarks, shopping districts, and business centers. Designed with modern architecture and equipped with state-of-the-art facilities, Ben Thanh Metro Station aims to provide a seamless and efficient commuting experience for both locals and tourists. Once fully operational, it will be a vital link in the city's public transportation network, promoting sustainable and eco-friendly travel."
-        scrolling="auto"
+        html="The Saigon Central Post Office, also known as the Ho Chi Minh City Post Office, is one of the most iconic architectural landmarks in Ho Chi Minh City. It is located at No. 2, Paris Commune Square, District 1. This building was constructed by the French between 1886 and 1891 in an eclectic style based on the design by architect Marie-Alfred Foulhoux. It showcases a blend of Western architecture with Eastern decorative elements. Situated next to Notre-Dame Cathedral, it is also a popular tourist attraction in Ho Chi Minh City."
+		scrolling="auto"
         css="color:#000000; font-size:18px; text-align:justify; overflow:auto; padding:20px;
 			background-color: rgba(255, 255, 255, 0.9); margin: 0 auto;
 			border-radius: 15px; 
@@ -186,7 +202,7 @@
 	<include url="skin/vtourskin_design.xml" />
 	
 	<!-- Post station -->
-	<scene name="scene_PostStation1" title="PostStation1" onstart="" thumburl="panos/PostStation1.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_PostStation1" title="Post Station" onstart="" thumburl="panos/PostStation1.tiles/thumb.jpg" lat="" lng="" heading="">
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-33.870" vlookatmax="33.870" />
 
 		<preview url="panos/PostStation1.tiles/preview.jpg" />
@@ -195,9 +211,10 @@
 			<cube url="panos/PostStation1.tiles/pano_%s.jpg" />
 		</image>
 		<hotspot name="scene_poststation2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-11.768" atv="20.866" onclick="skin_loadscene(scene_poststation2, get(skin_settings.loadscene_blend))" />
+		<hotspot name="callout_wallclock" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="-11.074" atv="-5.111" onclick="open-lightboxlayer('%CURRENTXML%/wallclock-en.html', 'width:100%;height:100%;');"/>
 	</scene>
 
-	<scene name="scene_PostStation2" title="PostStation2" onstart="" thumburl="panos/PostStation2.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_PostStation2" title="Post Station" onstart="" thumburl="panos/PostStation2.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-34.228" vlookatmax="34.228" />
 
@@ -211,7 +228,7 @@
 
 	</scene>
 
-	<scene name="scene_PostStation3" title="PostStation3" onstart="" thumburl="panos/PostStation3.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_PostStation3" title="Post Station" onstart="" thumburl="panos/PostStation3.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-25.553" vlookatmax="25.553" />
 
@@ -223,7 +240,7 @@
 		<hotspot name="scene_poststation2" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="160.612" atv="15.250" onclick="skin_loadscene(scene_poststation2, get(skin_settings.loadscene_blend))" />
 	</scene>
 
-	<scene name="scene_PostStation4" title="PostStation4" onstart="" thumburl="panos/PostStation4.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_PostStation4" title="Post Station" onstart="" thumburl="panos/PostStation4.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-27.071" vlookatmax="27.071" />
 

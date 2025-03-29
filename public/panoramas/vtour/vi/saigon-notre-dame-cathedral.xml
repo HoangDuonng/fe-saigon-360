@@ -54,11 +54,10 @@
 		url="skin/logo_2.png" 
 		keep="true" 
 		scale="0.5" 
-		x="+20" y="-70" 
+		x="+0" y="-70" 
 		align="topleft" 
 		enabled="true" 
 		alpha="0"
-		onclick="openurl(http://localhost:3000/vi/)"
 	/>
 
 	<style name="infospot"

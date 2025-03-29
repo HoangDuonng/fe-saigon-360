@@ -54,11 +54,10 @@
 		url="skin/logo_2.png" 
 		keep="true" 
 		scale="0.5" 
-		x="+20" y="-70" 
+		x="+0" y="-70" 
 		align="topleft" 
 		enabled="true" 
 		alpha="0"
-		onclick="openurl(http://localhost:3000/vi/)"
 	/>
 
 	<style name="infospot"
@@ -211,11 +210,12 @@
 		<image>
 			<cube url="panos/nha-sach.tiles/pano_%s.jpg" />
 		</image>
-		<hotspot name="callout_nha-tho-duc-ba-3d" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="150.372" atv="-9.089" onclick="open-lightboxlayer('%CURRENTXML%/nha-tho-duc-ba-en.html', 'width:100%;height:100%;');"/>
+		<hotspot name="callout_nha-tho-duc-ba-3d" url="skin/target.gif" renderer="css3d" scale="0.7" width="100" height="100" preload="true" ath="108.401" atv="1.049" onclick="open-lightboxlayer('%CURRENTXML%/bookshelf-en.html', 'width:100%;height:100%;');"/>
 		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-19.927" atv="18.993" onclick="skin_loadscene(scene_BookStreet2, get(skin_settings.loadscene_blend))" />
+		
 	</scene>
 
-	<scene name="scene_BookStreet2" title="BookStreet2" onstart="" thumburl="panos/BookStreet2.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_BookStreet2" title="Book Street" onstart="" thumburl="panos/BookStreet2.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-32.875" vlookatmax="32.875" />
 
@@ -225,7 +225,7 @@
 			<cube url="panos/BookStreet2.tiles/pano_%s.jpg" />
 		</image>
 		<hotspot name="spot1" url="skin/dan_duong.png" onloaded="do_crop_animation(128,128,20);" ath="-12.636" atv="25.406" onclick="skin_loadscene(scene_nha-sach, get(skin_settings.loadscene_blend))" />
-	</scene>
+	</scene> 
 
 	<!-- Actions -->
 	<action name="show_info_popup">

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@v4.0.0/dist/model-viewer.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: transparent !important;
+    }
+
+    model-viewer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: #f3f4f6;
+      background-image: url('./white-blur.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .model-title {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      font-size: 28px;
+      font-weight: 700;
+      color: #1f2937; /* màu xám đậm */
+      background: rgba(255, 255, 255, 0.8);
+      padding: 8px 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6px);
+    }
+
+    .control-panel {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        background: transparent; /* ✅ Không còn màu trắng nữa */
+        backdrop-filter: none;    /* ✅ Không làm mờ nữa */
+        border-radius: 8px;
+        }
+
+
+    .control-panel button {
+      padding: 10px 18px;
+      background: linear-gradient(to right, #4f8fb6, #3b7297);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .control-panel button:hover {
+      background: linear-gradient(to right, #4f8fb6, #3b7297);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .control-panel {
+        flex-direction: row;
+        bottom: 20px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-wrap: wrap;
+        padding: 12px;
+        gap: 8px;
+      }
+
+      .control-panel button {
+        font-size: 12px;
+        padding: 8px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="control-panel">
+    <button onclick="rotateModel(-15, 0)">⟲ Left</button>
+    <button onclick="rotateModel(15, 0)">⟳ Right</button>
+    <button onclick="rotateModel(0, 10)">⇡ Up</button>
+    <button onclick="rotateModel(0, -10)">⇣ Down</button>
+    <button onclick="zoomModel(-1)">➕ Zoom in</button>
+    <button onclick="zoomModel(1)">➖ Zoom out</button>
+  </div>
+
+  <div class="model-title">Bookshelf</div>
+
+  <model-viewer
+    id="modelViewer"
+    src="./bookshelf.glb"
+    alt="Mô hình 3D kệ sách"
+    camera-controls
+    auto-rotate
+    touch-action="pan-y"
+    tone-mapping="aces"
+    shadow-intensity="1"
+    camera-orbit="0deg 75deg 15m"
+    min-camera-orbit="auto 30deg 2m"
+    max-camera-orbit="auto 90deg 20m"
+    ar
+  ></model-viewer>
+
+  <script>
+    const modelViewer = document.getElementById('modelViewer');
+
+    function parseOrbit(orbitStr) {
+      const [azimuth, altitude, radius] = orbitStr.split(' ');
+      return {
+        azimuth: parseFloat(azimuth.replace('deg', '')),
+        altitude: parseFloat(altitude.replace('deg', '')),
+        radius: parseFloat(radius.replace('m', ''))
+      };
+    }
+
+    function rotateModel(deltaAzimuth = 0, deltaAltitude = 0) {
+      const orbit = parseOrbit(modelViewer.cameraOrbit);
+      const azimuth = orbit.azimuth + deltaAzimuth;
+      const altitude = orbit.altitude + deltaAltitude;
+      modelViewer.cameraOrbit = `${azimuth}deg ${altitude}deg ${orbit.radius}m`;
+    }
+
+    function zoomModel(delta) {
+      const orbit = parseOrbit(modelViewer.cameraOrbit);
+      const newRadius = Math.max(orbit.radius + delta, 2);
+      modelViewer.cameraOrbit = `${orbit.azimuth}deg ${orbit.altitude}deg ${newRadius}m`;
+    }
+  </script>
+
+</body>
+</html>
