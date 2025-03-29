@@ -19,7 +19,6 @@
     "js-cookie": "^3.0.5",
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
-    "lucide-react": "^0.477.0",
     "next": "14.1.0",
     "next-intl": "^3.5.3",
     "react": "^18",
