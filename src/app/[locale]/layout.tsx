@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import UserFetcher from "./UserFetcher";
 import { WebSocketProvider } from "./web-socket-context";
 import GuestSessionInitializer from "@/components/guest-session/GuestSessionInitializer";
+import VirtualAssistant from "@/components/chatbot";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -37,6 +38,7 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
             {/* Nội dung chính */}
             <div className="flex flex-col min-h-screen mx-auto">
               <div className="flex-grow">{children}</div>
+              <VirtualAssistant />
             </div>
           </UserFetcher>
         </WebSocketProvider>
