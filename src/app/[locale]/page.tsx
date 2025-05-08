@@ -17,7 +17,6 @@ export default function Home() {
         <DestinationIntroduce />
         <DestinationBox />
       </div>
-      <BackToTop />
       <Footer />
     </div>
   );
